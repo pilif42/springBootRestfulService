@@ -23,8 +23,8 @@ public class GreetingController {
         logger.info("info: entering greeting...");
         logger.debug("debug: entering greeting...");
         logger.warn("warn: entering greeting...");
-        logger.error("error : You chose a number > 100 ");
-        logger.fatal("fatal : You chose a number > 100 ");
+        logger.error("error: entering greeting...");
+        logger.fatal("fatal: entering greeting...");
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
 }
