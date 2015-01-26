@@ -16,6 +16,11 @@
         - see http://spring.io/guides/gs/convert-jar-to-war/
 
 
-- to test:
+- to test the simple controller:
         - default = http://localhost:8080/greeting
         - specific = http://localhost:8080/greeting?name=Joe
+
+
+- to test the controller persisting to the database:
+        - default = http://localhost:8080/customer
+        - specific = http://localhost:8080/customer?name=Zinedine
