@@ -1,0 +1,21 @@
+- followed http://spring.io/guides/gs/rest-service/ :
+		- chose the Maven build option
+
+
+- to run the application as a .jar:
+        - option 1:
+                - git bash to C:\AndroidStudioProjects\springTutorials\restfulWebService
+                - mvn spring-boot:run
+
+        - option 2:
+                - build the JAR file with mvn clean package
+                - run the JAR by typing: java -jar target/gs-rest-service-0.1.0.jar
+
+
+- to run the application as a .war:
+        - see http://spring.io/guides/gs/convert-jar-to-war/
+
+
+- to test:
+        - default = http://localhost:8080/greeting
+        - specific = http://localhost:8080/greeting?name=Joe
