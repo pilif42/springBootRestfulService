@@ -5,6 +5,7 @@
 - to run the application as a .jar:
         - option 1:
                 - git bash to C:\AndroidStudioProjects\springTutorials\restfulWebService
+                - mvn clean package
                 - mvn spring-boot:run
 
         - option 2:
