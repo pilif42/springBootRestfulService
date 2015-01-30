@@ -3,6 +3,8 @@ package repository;
 import domain.Customer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -15,6 +17,9 @@ public class CustomerDAOImpl extends JdbcDaoSupport implements CustomerDAO {
 
     private static final Logger logger = LogManager.getLogger(CustomerDAOImpl.class);
 
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
     @Override
     public Customer getCustomer(int customerId) {
         logger.debug("entering getCustomer...");
@@ -23,7 +28,7 @@ public class CustomerDAOImpl extends JdbcDaoSupport implements CustomerDAO {
                 ",CUSTOMER.LASTNAME AS 'lastName'" +
                 " FROM CUSTOMER" +
                 " WHERE CUSTOMER.ID = ?";
-        Customer result = getJdbcTemplate().queryForObject(sqlQuery, new Object[]{customerId}, new CustomerMapper());
+        Customer result = jdbcTemplate.queryForObject(sqlQuery, new Object[]{customerId}, new CustomerMapper());
         return result;
     }
 
