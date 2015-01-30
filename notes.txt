@@ -25,3 +25,8 @@
 - to test the controller persisting to the database:
         - default = http://localhost:8080/customer
         - specific = http://localhost:8080/customer?name=Zinedine
+
+
+- TODO DB work: http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
+        - TODO embedded database
+        - TODO prod database

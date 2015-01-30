@@ -3,10 +3,12 @@ package controller;
 import domain.Customer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import service.CustomerService;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -17,10 +19,17 @@ public class CustomerController {
 
     private final AtomicLong counter = new AtomicLong();
 
+    @Autowired
+    private CustomerService customerService;
+
     @RequestMapping(value="/customer", method= RequestMethod.GET)
     public Customer customer(@RequestParam(value="name", defaultValue="Joe") String name) {
         logger.debug("debug: entering customer...");
-        return new Customer(counter.incrementAndGet(), name, "Zidane");
+
+        Customer result = customerService.getCustomer(1);
+        return result;
+
+        //return new Customer(counter.incrementAndGet(), name, "Zidane");
     }
 
 }
