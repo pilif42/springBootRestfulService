@@ -20,10 +20,10 @@ public class JDBCCustomerRepository extends JDBCBaseRepository implements Custom
     @Override
     public Customer getCustomer(String customerId) {
         logger.debug("entering getCustomer...");
-        String sqlQuery = "SELECT CUSTOMER.ID AS 'id'" +
-                ",CUSTOMER.FIRSTNAME AS 'firstName'" +
-                ",CUSTOMER.LASTNAME AS 'lastName'" +
-                " FROM CUSTOMER" +
+        String sqlQuery = "SELECT CUSTOMER.ID AS \"id\"" +
+                ",CUSTOMER.FIRSTNAME AS \"firstName\"" +
+                ",CUSTOMER.LASTNAME AS \"lastName\"" +
+                " FROM teststore.CUSTOMER" +
                 " WHERE CUSTOMER.ID = ?";
         Customer result = jdbcTemplate.queryForObject(sqlQuery, new Object[]{customerId}, new CustomerMapper());
         return result;
