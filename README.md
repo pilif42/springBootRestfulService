@@ -2,6 +2,7 @@ To start this project, I initially followed http://spring.io/guides/gs/rest-serv
 		- chose the Maven build option
 
 
+## Run
 To run the application as a .jar:
         - option 1:
                 - git bash to C:\AndroidStudioProjects\springTutorials\restfulWebService
@@ -17,6 +18,7 @@ To run the application as a .war:
         - see http://spring.io/guides/gs/convert-jar-to-war/
 
 
+## Tests
 To test the simple controller:
         - default = http://localhost:8080/greeting
         - specific = http://localhost:8080/greeting?name=Joe
@@ -46,6 +48,5 @@ step 5 - insert test data
 
 
 - TODO DB work: http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
-        - sort out the logging
         - create profiles depn on DEV, TEST, etc.: see http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
 
