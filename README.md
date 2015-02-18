@@ -27,11 +27,6 @@ To test the controller persisting to the database:
         - specific = http://localhost:8080/customer?name=Zinedine
 
 
-- TODO DB work: http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
-        - get it working locally with postgresql
-        - create profiles depn on DEV, TEST, etc.: see http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
-
-
 ## Database
 step 1 - create a user with the following from the command line:
     createuser -U postgres -P teststore
@@ -48,3 +43,11 @@ step 4 - populate the schema
 
 step 5 - insert test data
     scripts are located in `<ROOT>/database/<RDBM>/<VERSION>/testdata.<APP-VERSION>.sql`
+
+
+- TODO DB work: http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
+        - get it working locally with postgresql: org.postgresql.util.PSQLException: ERROR: permission denied for schema teststore
+        - sort out the logging
+        - sort out the logging
+        - create profiles depn on DEV, TEST, etc.: see http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
+
