@@ -9,7 +9,7 @@ To run the application as a .jar:
                 - mvn spring-boot:run
 
         - option 2:
-                - build the JAR file with mvn clean package
+                - mvn clean package
                 - run the JAR by typing: java -jar target/gs-rest-service-0.1.0.jar
 
 
