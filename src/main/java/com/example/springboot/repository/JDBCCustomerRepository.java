@@ -1,6 +1,6 @@
-package repository;
+package com.example.springboot.repository;
 
-import domain.Customer;
+import com.example.springboot.domain.Customer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,12 +13,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Repository
-public class CustomerDAOImpl extends JdbcDaoSupport implements CustomerDAO {
+public class JDBCCustomerRepository extends JDBCBaseRepository implements CustomerRepository {
 
-    private static final Logger logger = LogManager.getLogger(CustomerDAOImpl.class);
-
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private static final Logger logger = LogManager.getLogger(JDBCCustomerRepository.class);
 
     @Override
     public Customer getCustomer(String customerId) {

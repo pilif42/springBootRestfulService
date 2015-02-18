@@ -1,6 +1,6 @@
-package service;
+package com.example.springboot.service;
 
-import domain.Customer;
+import com.example.springboot.domain.Customer;
 
 public interface CustomerService {
 

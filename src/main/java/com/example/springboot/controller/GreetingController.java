@@ -1,6 +1,6 @@
-package controller;
+package com.example.springboot.controller;
 
-import domain.Greeting;
+import com.example.springboot.domain.Greeting;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;

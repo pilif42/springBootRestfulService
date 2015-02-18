@@ -1,23 +1,23 @@
-package service;
+package com.example.springboot.service;
 
-import domain.Customer;
+import com.example.springboot.domain.Customer;
+import com.example.springboot.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.CustomerDAO;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    private CustomerDAO customerDAO;
+    private CustomerRepository customerRepository;
 
     @Override
     public Customer getCustomer(String customerId) {
-        return customerDAO.getCustomer(customerId);
+        return customerRepository.getCustomer(customerId);
     }
 
     @Override
     public boolean createCustomer(Customer aCustomer) {
-        return customerDAO.createCustomer(aCustomer);
+        return customerRepository.createCustomer(aCustomer);
     }
 }

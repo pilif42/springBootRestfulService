@@ -1,6 +1,6 @@
-package controller;
+package com.example.springboot.controller;
 
-import domain.Customer;
+import com.example.springboot.domain.Customer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import service.CustomerService;
+import com.example.springboot.service.CustomerService;
 
 import java.util.concurrent.atomic.AtomicLong;
 

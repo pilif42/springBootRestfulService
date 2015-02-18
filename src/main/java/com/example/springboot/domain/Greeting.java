@@ -1,4 +1,4 @@
-package domain;
+package com.example.springboot.domain;
 
 public class Greeting {
 
