@@ -21,7 +21,7 @@ public class CustomerDAOImpl extends JdbcDaoSupport implements CustomerDAO {
     private JdbcTemplate jdbcTemplate;
 
     @Override
-    public Customer getCustomer(int customerId) {
+    public Customer getCustomer(String customerId) {
         logger.debug("entering getCustomer...");
         String sqlQuery = "SELECT CUSTOMER.ID AS 'id'" +
                 ",CUSTOMER.FIRSTNAME AS 'firstName'" +
@@ -41,7 +41,7 @@ public class CustomerDAOImpl extends JdbcDaoSupport implements CustomerDAO {
     private static class CustomerMapper implements ParameterizedRowMapper<Customer> {
         public Customer mapRow(ResultSet rs, int rowNum) throws SQLException {
             Customer customer = new Customer();
-            customer.setId(rs.getInt("id"));
+            customer.setId(rs.getString("id"));
             customer.setFirstName(rs.getString("firstName"));
             customer.setLastName(rs.getString("lastName"));
             return customer;

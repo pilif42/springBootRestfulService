@@ -2,24 +2,24 @@ package domain;
 
 public class Customer {
 
-    private long id;
+    private String id;
     private String firstName;
     private String lastName;
 
     public Customer() {
     }
 
-    public Customer(long id, String firstName, String lastName) {
+    public Customer(String id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

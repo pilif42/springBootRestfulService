@@ -4,7 +4,7 @@ import domain.Customer;
 
 public interface CustomerDAO {
 
-    Customer getCustomer(int customerId);
+    Customer getCustomer(String customerId);
     boolean createCustomer(Customer aCustomer);
 
 }

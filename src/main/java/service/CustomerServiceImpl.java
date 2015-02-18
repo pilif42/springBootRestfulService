@@ -12,7 +12,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerDAO customerDAO;
 
     @Override
-    public Customer getCustomer(int customerId) {
+    public Customer getCustomer(String customerId) {
         return customerDAO.getCustomer(customerId);
     }
 

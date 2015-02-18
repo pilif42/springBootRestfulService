@@ -4,7 +4,7 @@ import domain.Customer;
 
 public interface CustomerService {
 
-    Customer getCustomer(int customerId);
+    Customer getCustomer(String customerId);
     boolean createCustomer(Customer aCustomer);
 
 }

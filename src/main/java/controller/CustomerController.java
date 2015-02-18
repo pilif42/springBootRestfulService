@@ -26,7 +26,7 @@ public class CustomerController {
     public Customer customer(@RequestParam(value="name", defaultValue="Joe") String name) {
         logger.debug("debug: entering customer...");
 
-        Customer result = customerService.getCustomer(1);
+        Customer result = customerService.getCustomer("1");
         return result;
 
         //return new Customer(counter.incrementAndGet(), name, "Zidane");
