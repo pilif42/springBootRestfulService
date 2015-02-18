@@ -6,10 +6,12 @@ To start this project, I initially followed http://spring.io/guides/gs/rest-serv
 To run the application as a .jar:
         - option 1:
                 - git bash to C:\AndroidStudioProjects\springTutorials\restfulWebService
+                - check which profile is active in application.properties
                 - mvn clean package
-                - mvn spring-boot:run
+                - mvn spring-boot:run --spring.profiles.active=local
 
         - option 2:
+                - check which profile is active in application.properties
                 - mvn clean package
                 - run the JAR by typing: java -jar target/gs-rest-service-0.1.0.jar
 
@@ -47,6 +49,6 @@ step 5 - insert test data
     scripts are located in `<ROOT>/database/<RDBM>/<VERSION>/testdata.<APP-VERSION>.sql`
 
 
-- TODO DB work: http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
-        - create profiles depn on DEV, TEST, etc.: see http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
-
+- TODO:
+    - CustomerController TODO and write some configurable-per-envrionment tests
+    - Add Spring Security to the mix.
