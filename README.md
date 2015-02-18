@@ -46,8 +46,6 @@ step 5 - insert test data
 
 
 - TODO DB work: http://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html
-        - get it working locally with postgresql: org.postgresql.util.PSQLException: ERROR: permission denied for schema teststore
-        - sort out the logging
         - sort out the logging
         - create profiles depn on DEV, TEST, etc.: see http://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html
 
