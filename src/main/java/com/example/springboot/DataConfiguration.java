@@ -13,7 +13,6 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.sql.DataSource;
 
 @Configuration
-@PropertySource("classpath:database.properties")
 public class DataConfiguration {
 
     @Autowired
