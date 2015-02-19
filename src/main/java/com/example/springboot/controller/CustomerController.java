@@ -17,17 +17,13 @@ public class CustomerController {
 
     private static final Logger logger = LogManager.getLogger(CustomerController.class);
 
-    private final AtomicLong counter = new AtomicLong();
-
     @Autowired
     private CustomerService customerService;
 
     @RequestMapping(value="/customer", method= RequestMethod.GET)
-    public Customer customer(@RequestParam(value="name", defaultValue="Joe") String name) {
-        logger.debug("debug: entering customer...");
-
-        // TODO Remove the hardcoding below
-        Customer result = customerService.getCustomer("1");
+    public Customer customer(@RequestParam(value="id", defaultValue="1") String id) {
+        logger.debug("debug: entering customer with id = " + id);
+        Customer result = customerService.getCustomer(id);
         return result;
     }
 

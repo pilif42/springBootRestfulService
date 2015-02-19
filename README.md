@@ -8,7 +8,7 @@ To run the application as a .jar:
                 - git bash to C:\AndroidStudioProjects\springTutorials\restfulWebService
                 - check which profile is active in application.properties
                 - mvn clean package
-                - mvn spring-boot:run --spring.profiles.active=local
+                - mvn spring-boot:run
 
         - option 2:
                 - check which profile is active in application.properties
@@ -28,7 +28,7 @@ To test the simple controller:
 
 To test the controller persisting to the database:
         - default = http://localhost:8080/customer
-        - specific = http://localhost:8080/customer?name=Zinedine
+        - specific = http://localhost:8080/customer?id=2
 
 
 ## Database
