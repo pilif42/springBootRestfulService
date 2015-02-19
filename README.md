@@ -50,5 +50,6 @@ step 5 - insert test data
 
 
 - TODO:
-    - CustomerController TODO and write some configurable-per-envrionment tests
+    - handle error when id not found in db
+    - write some configurable-per-environment tests for CustomerController
     - Add Spring Security to the mix.
