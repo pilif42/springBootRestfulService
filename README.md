@@ -50,6 +50,7 @@ step 5 - insert test data
 
 
 - TODO:
-    - write some configurable-per-environment tests for CustomerController using MockMvc and org.mockito
+    - log 2 file not working when running tests
+    - TODO in CustomerControllerTests
     - add Hibernate
     - add Spring Security to the mix.
