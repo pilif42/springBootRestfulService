@@ -1,6 +1,7 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.domain.Customer;
+import com.example.springboot.error.OurException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.springboot.service.CustomerService;
-
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class CustomerController {
@@ -21,9 +20,13 @@ public class CustomerController {
     private CustomerService customerService;
 
     @RequestMapping(value="/customer", method= RequestMethod.GET)
-    public Customer customer(@RequestParam(value="id", defaultValue="1") String id) {
+    public Customer customer(@RequestParam(value="id", defaultValue="1") String id) throws OurException
+    {
         logger.debug("debug: entering customer with id = " + id);
         Customer result = customerService.getCustomer(id);
+        if (result == null) {
+            throw new OurException(OurException.Fault.CUSTOMER_NOT_FOUND);
+        }
         return result;
     }
 

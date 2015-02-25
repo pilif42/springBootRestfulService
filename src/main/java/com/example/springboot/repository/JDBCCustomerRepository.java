@@ -4,6 +4,7 @@ import com.example.springboot.domain.Customer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
@@ -25,7 +26,13 @@ public class JDBCCustomerRepository extends JDBCBaseRepository implements Custom
                 ",CUSTOMER.LASTNAME AS \"lastName\"" +
                 " FROM teststore.CUSTOMER" +
                 " WHERE CUSTOMER.ID = ?";
-        Customer result = jdbcTemplate.queryForObject(sqlQuery, new Object[]{customerId}, new CustomerMapper());
+
+        Customer result = null;
+        try {
+            result = jdbcTemplate.queryForObject(sqlQuery, new Object[]{customerId}, new CustomerMapper());
+        } catch (EmptyResultDataAccessException e) {
+            logger.error("customer not found");
+        }
         return result;
     }
 
