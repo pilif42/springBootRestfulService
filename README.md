@@ -1,23 +1,13 @@
-To start this project, I initially followed http://spring.io/guides/gs/rest-service/ :
-		- chose the Maven build option
+## To start this project, I initially followed http://spring.io/guides/gs/rest-service/ :
+		- chose the Gradle build option
 
 
-## Run
-To run the application as a .jar:
-        - option 1:
-                - git bash to C:\AndroidStudioProjects\springTutorials\restfulWebService
-                - check which profile is active in application.properties
-                - mvn clean package
-                - mvn spring-boot:run
-
-        - option 2:
-                - check which profile is active in application.properties
-                - mvn clean package
-                - run the JAR by typing: java -jar target/gs-rest-service-0.1.0.jar
+## To build
+gradlew clean build
 
 
-To run the application as a .war:
-        - see http://spring.io/guides/gs/convert-jar-to-war/
+## To run
+gradlew :bootRun
 
 
 ## Tests
