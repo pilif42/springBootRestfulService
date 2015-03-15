@@ -40,7 +40,9 @@ step 5 - insert test data
 
 
 - TODO:
-    - log 2 file not working when running tests
+    - verify the logging to file works for tests and for runtime
+    - hook up in hadoop: https://spring.io/guides/gs/yarn-basic/
+    - hook up with hbase: http://hbase.apache.org/
     - TODO in CustomerControllerTests
     - add Hibernate
     - add Spring Security to the mix.

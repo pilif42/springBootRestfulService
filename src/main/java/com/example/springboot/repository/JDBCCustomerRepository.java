@@ -1,8 +1,8 @@
 package com.example.springboot.repository;
 
 import com.example.springboot.domain.Customer;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 @Repository
 public class JDBCCustomerRepository extends JDBCBaseRepository implements CustomerRepository {
 
-    private static final Logger logger = LogManager.getLogger(JDBCCustomerRepository.class);
+    private static final Logger logger = LoggerFactory.getLogger(JDBCCustomerRepository.class);
 
     @Override
     public Customer getCustomer(String customerId) {
