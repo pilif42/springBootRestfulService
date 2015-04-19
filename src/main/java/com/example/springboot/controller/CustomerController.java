@@ -23,7 +23,7 @@ public class CustomerController {
     public Customer customer(@RequestParam(value="id", defaultValue="1") String id) throws OurException
     {
         logger.debug("debug: entering customer with id = " + id);
-        Customer result = customerService.getCustomer(id);
+        Customer result = customerService.findById(id);
         if (result == null) {
             throw new OurException(OurException.Fault.CUSTOMER_NOT_FOUND);
         }

@@ -40,8 +40,12 @@ step 5 - insert test data
 
 
 - TODO:
-    - add Hibernate
+    - add Spring JPA:
+           - clean the db: make id on Customer a long, sort out column names, etc.
+           - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
+           - replace findById with findOne in CustomerRepository
+    - add HealthDAO with jdbc
+    - add Flyway
     - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
     - hook up with hbase: http://hbase.apache.org/
-    - add Flyway
     - add Spring Security to the mix.

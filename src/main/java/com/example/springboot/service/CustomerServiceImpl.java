@@ -12,12 +12,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public Customer getCustomer(String customerId) {
-        return customerRepository.getCustomer(customerId);
-    }
-
-    @Override
-    public boolean createCustomer(Customer aCustomer) {
-        return customerRepository.createCustomer(aCustomer);
+    public Customer findById(String customerId) {
+        return customerRepository.findById(customerId);
     }
 }

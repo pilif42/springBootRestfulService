@@ -43,7 +43,7 @@ public class CustomerControllerTests {
         String testID = "1";
         String testFirstName = "Ken";
         String testLastName = "Smith";
-        when(customerService.getCustomer(TestConstants.DEFAULT_CUSTOMER_ID)).thenReturn(customer().id(testID).firstName(testFirstName).lastName(testLastName).build());
+        when(customerService.findById(TestConstants.DEFAULT_CUSTOMER_ID)).thenReturn(customer().id(testID).firstName(testFirstName).lastName(testLastName).build());
 
         ResultActions actions = mockMvc.perform(getJson("/customer"));
 
