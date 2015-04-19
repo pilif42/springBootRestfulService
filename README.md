@@ -16,7 +16,7 @@ To test the simple controller:
         - specific = http://localhost:8080/greeting?name=Joe
 
 
-To test the controller persisting to the database:
+To test the controller talking to the database:
         - default = http://localhost:8080/customer
         - specific = http://localhost:8080/customer?id=2
 
@@ -40,9 +40,9 @@ step 5 - insert test data
 
 
 - TODO:
-    - verify the logging to file works for tests and for runtime
-    - hook up in hadoop: https://spring.io/guides/gs/yarn-basic/
-    - hook up with hbase: http://hbase.apache.org/
     - TODO in CustomerControllerTests
     - add Hibernate
+    - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
+    - hook up with hbase: http://hbase.apache.org/
+    - add Flyway
     - add Spring Security to the mix.
