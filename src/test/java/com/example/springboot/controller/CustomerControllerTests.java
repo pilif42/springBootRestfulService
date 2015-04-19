@@ -1,8 +1,6 @@
 package com.example.springboot.controller;
 
-import com.example.springboot.domain.Customer;
 import com.example.springboot.service.CustomerService;
-import com.example.springboot.utilities.CustomerBuilder;
 import com.example.springboot.utilities.TestConstants;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,16 +40,17 @@ public class CustomerControllerTests {
 
     @Test
     public void defaultCustomerId() throws Exception {
-        when(customerService.getCustomer(TestConstants.EXISTING_CUSTOMER)).thenReturn(customer().id("1").firstName("Ken").lastName("Smith").build());
+        String testID = "1";
+        String testFirstName = "Ken";
+        String testLastName = "Smith";
+        when(customerService.getCustomer(TestConstants.DEFAULT_CUSTOMER_ID)).thenReturn(customer().id(testID).firstName(testFirstName).lastName(testLastName).build());
 
         ResultActions actions = mockMvc.perform(getJson("/customer"));
 
-        // TODO validate results
-//                .andExpect(status().isOk())
-//                .andExpect(jsonPath("$.first_name", is("Ken")))
-//                .andExpect(jsonPath("$.last_name", is("Smith")))
-//                );
+        actions.andExpect(status().isOk());
+        actions.andExpect(jsonPath("$.id", is(testID)));
+        actions.andExpect(jsonPath("$.firstName", is(testFirstName)));
+        actions.andExpect(jsonPath("$.lastName", is(testLastName)));
     }
-
 
 }

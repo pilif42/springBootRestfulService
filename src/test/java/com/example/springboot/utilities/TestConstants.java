@@ -1,5 +1,5 @@
 package com.example.springboot.utilities;
 
 public class TestConstants {
-    public static final String EXISTING_CUSTOMER = "1";
+    public static final String DEFAULT_CUSTOMER_ID = "1";
 }

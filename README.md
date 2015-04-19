@@ -40,7 +40,6 @@ step 5 - insert test data
 
 
 - TODO:
-    - TODO in CustomerControllerTests
     - add Hibernate
     - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
     - hook up with hbase: http://hbase.apache.org/
