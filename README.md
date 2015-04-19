@@ -11,10 +11,12 @@ gradlew :bootRun
 
 
 ## Tests
+To test the healthcheck:
+        - http://localhost:8080/healthcheck
+
 To test the simple controller:
         - default = http://localhost:8080/greeting
         - specific = http://localhost:8080/greeting?name=Joe
-
 
 To test the controller talking to the database:
         - default = http://localhost:8080/customer
@@ -44,7 +46,6 @@ step 5 - insert test data
            - clean the db: make id on Customer a long, sort out column names, etc.
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
            - replace findById with findOne in CustomerRepository
-    - add HealthDAO with jdbc
     - add Flyway
     - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
     - hook up with hbase: http://hbase.apache.org/
