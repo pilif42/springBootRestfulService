@@ -1,78 +1,78 @@
-å21:45:21.223 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-ç21:45:21.265 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-ü21:45:21.266 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-¸21:45:21.520 [Test worker] INFO  o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped "{[/customer],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.example.springboot.domain.Customer com.example.springboot.controller.CustomerController.customer(java.lang.String) throws com.example.springboot.error.OurException
-n21:45:21.665 [Test worker] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
-r21:45:21.669 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
-Ì21:45:21.697 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-«21:45:21.700 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-ø21:45:21.722 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-â21:45:21.726 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy20
-í21:45:21.736 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-ë21:45:21.751 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-º21:45:21.875 [Test worker] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@7bb95c9c
-\21:45:22.074 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Initializing servlet ''
-ó21:45:22.115 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletConfigInitParams] PropertySource with lowest search precedence
-ò21:45:22.115 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletContextInitParams] PropertySource with lowest search precedence
-ê21:45:22.124 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-ë21:45:22.124 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-€21:45:22.125 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
-l21:45:22.125 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring FrameworkServlet ''
-p21:45:22.125 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization started
-≠21:45:22.135 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Unable to locate MultipartResolver with name 'multipartResolver': no multipart request handling provided
-£21:45:22.135 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using LocaleResolver [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@8d0ff03]
-ú21:45:22.135 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using ThemeResolver [org.springframework.web.servlet.theme.FixedThemeResolver@4e1f40db]
-∏21:45:22.135 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using RequestToViewNameTranslator [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@40df853]
-§21:45:22.135 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using FlashMapManager [org.springframework.web.servlet.support.SessionFlashMapManager@293a1a61]
-‘21:45:22.136 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Published WebApplicationContext of servlet '' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.]
-{21:45:22.136 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization completed in 11 ms
-g21:45:22.136 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Servlet '' configured successfully
-ä21:45:22.276 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - DispatcherServlet with name '' processing GET request for [/customer]
-ô21:45:22.281 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Looking up handler method for path /customer
-∂21:45:22.284 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Returning handler method [public com.example.springboot.domain.Customer com.example.springboot.controller.CustomerController.customer(java.lang.String) throws com.example.springboot.error.OurException]
-o21:45:22.284 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Last-Modified value for [/customer] is: -1
-m21:45:22.337 [Test worker] DEBUG c.e.s.controller.CustomerController - debug: entering customer with id = 1
-î21:45:22.453 [Test worker] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Written [Customer[id='1', firstName='Ken', lastName='Smith']] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@154b9e51]
-µ21:45:22.454 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Null ModelAndView returned to DispatcherServlet with name '': assuming HandlerAdapter completed request handling
-c21:45:22.454 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Successfully completed request
-`21:45:22.570 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['id']
-g21:45:22.581 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['firstName']
-f21:45:22.581 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['lastName']
-å21:45:22.609 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-ç21:45:22.609 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-ü21:45:22.610 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
-Ó21:45:22.614 [Test worker] INFO  o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped "{[/healthcheck],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<?> com.example.springboot.controller.HealthCheckController.handleHealthcheck(java.lang.String)
-Ì21:45:22.629 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
-«21:45:22.630 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
-ø21:45:22.630 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-â21:45:22.630 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy20
-í21:45:22.631 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
-ë21:45:22.632 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
-º21:45:22.635 [Test worker] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@6e2e557f
-\21:45:22.636 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Initializing servlet ''
-ó21:45:22.637 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletConfigInitParams] PropertySource with lowest search precedence
-ò21:45:22.637 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletContextInitParams] PropertySource with lowest search precedence
-ê21:45:22.637 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
-ë21:45:22.637 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
-€21:45:22.637 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
-l21:45:22.638 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring FrameworkServlet ''
-p21:45:22.638 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization started
-≠21:45:22.638 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Unable to locate MultipartResolver with name 'multipartResolver': no multipart request handling provided
-§21:45:22.638 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using LocaleResolver [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@297b19cf]
-ö21:45:22.638 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using ThemeResolver [org.springframework.web.servlet.theme.FixedThemeResolver@58d3dc]
-π21:45:22.638 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using RequestToViewNameTranslator [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7c741edd]
-§21:45:22.638 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using FlashMapManager [org.springframework.web.servlet.support.SessionFlashMapManager@1fbfc98a]
-‘21:45:22.638 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Published WebApplicationContext of servlet '' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.]
-z21:45:22.639 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization completed in 1 ms
-g21:45:22.639 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Servlet '' configured successfully
-ç21:45:22.643 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - DispatcherServlet with name '' processing GET request for [/healthcheck]
-ú21:45:22.643 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Looking up handler method for path /healthcheck
-ï21:45:22.644 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Returning handler method [public org.springframework.http.ResponseEntity<?> com.example.springboot.controller.HealthCheckController.handleHealthcheck(java.lang.String)]
-r21:45:22.644 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Last-Modified value for [/healthcheck] is: -1
-û21:45:22.674 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Written [com.example.springboot.controller.HealthCheckController$HealthcheckResponse@1665d4cc] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7d13b9b2]
-µ21:45:22.674 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Null ModelAndView returned to DispatcherServlet with name '': assuming HandlerAdapter completed request handling
-c21:45:22.674 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Successfully completed request
-b21:45:22.675 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['host']
-e21:45:22.675 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['message']
-a21:45:22.675 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['sha']
-g21:45:22.678 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['timestamp']
+å21:57:19.403 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+ç21:57:19.437 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+ü21:57:19.437 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+¸21:57:19.666 [Test worker] INFO  o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped "{[/customer],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public com.example.springboot.domain.Customer com.example.springboot.controller.CustomerController.customer(java.lang.String) throws com.example.springboot.error.OurException
+n21:57:19.823 [Test worker] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+r21:57:19.827 [Test worker] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+Ì21:57:19.853 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+«21:57:19.856 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+ø21:57:19.876 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+â21:57:19.880 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy20
+í21:57:19.891 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+ë21:57:19.905 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+º21:57:20.036 [Test worker] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@7bb95c9c
+\21:57:20.214 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Initializing servlet ''
+ó21:57:20.245 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+ò21:57:20.246 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletContextInitParams] PropertySource with lowest search precedence
+ê21:57:20.253 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+ë21:57:20.253 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+€21:57:20.254 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+l21:57:20.254 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring FrameworkServlet ''
+p21:57:20.254 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization started
+≠21:57:20.262 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Unable to locate MultipartResolver with name 'multipartResolver': no multipart request handling provided
+£21:57:20.262 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using LocaleResolver [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@8d0ff03]
+ú21:57:20.262 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using ThemeResolver [org.springframework.web.servlet.theme.FixedThemeResolver@4e1f40db]
+∏21:57:20.262 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using RequestToViewNameTranslator [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@40df853]
+§21:57:20.263 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using FlashMapManager [org.springframework.web.servlet.support.SessionFlashMapManager@293a1a61]
+‘21:57:20.263 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Published WebApplicationContext of servlet '' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.]
+z21:57:20.263 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization completed in 9 ms
+g21:57:20.263 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Servlet '' configured successfully
+ä21:57:20.368 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - DispatcherServlet with name '' processing GET request for [/customer]
+ô21:57:20.372 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Looking up handler method for path /customer
+∂21:57:20.378 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Returning handler method [public com.example.springboot.domain.Customer com.example.springboot.controller.CustomerController.customer(java.lang.String) throws com.example.springboot.error.OurException]
+o21:57:20.380 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Last-Modified value for [/customer] is: -1
+m21:57:20.427 [Test worker] DEBUG c.e.s.controller.CustomerController - debug: entering customer with id = 1
+î21:57:20.531 [Test worker] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Written [Customer[id='1', firstName='Ken', lastName='Smith']] as "application/json;charset=UTF-8" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@154b9e51]
+µ21:57:20.531 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Null ModelAndView returned to DispatcherServlet with name '': assuming HandlerAdapter completed request handling
+c21:57:20.532 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Successfully completed request
+`21:57:20.669 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['id']
+g21:57:20.681 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['firstName']
+f21:57:20.681 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['lastName']
+å21:57:20.707 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+ç21:57:20.708 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+ü21:57:20.708 [Test worker] DEBUG o.s.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+Ó21:57:20.713 [Test worker] INFO  o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Mapped "{[/healthcheck],methods=[GET],params=[],headers=[],consumes=[],produces=[application/json],custom=[]}" onto public org.springframework.http.ResponseEntity<?> com.example.springboot.controller.HealthCheckController.handleHealthcheck(java.lang.String)
+Ì21:57:20.728 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Found javax.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+«21:57:20.728 [Test worker] DEBUG o.h.v.i.e.r.DefaultTraversableResolver - Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+ø21:57:20.728 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+â21:57:20.728 [Test worker] DEBUG o.h.v.i.engine.ConfigurationImpl - Setting custom ParameterNameProvider of type com.sun.proxy.$Proxy20
+í21:57:20.729 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - Trying to load META-INF/validation.xml for XML based Validator configuration.
+ë21:57:20.731 [Test worker] DEBUG o.h.v.i.xml.ValidationXmlParser - No META-INF/validation.xml found. Using annotation based configuration only.
+º21:57:20.733 [Test worker] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.test.web.servlet.setup.StubWebApplicationContext@6e2e557f
+\21:57:20.734 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Initializing servlet ''
+ó21:57:20.735 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletConfigInitParams] PropertySource with lowest search precedence
+ò21:57:20.735 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [servletContextInitParams] PropertySource with lowest search precedence
+ê21:57:20.735 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+ë21:57:20.735 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+€21:57:20.735 [Test worker] DEBUG o.s.w.c.s.StandardServletEnvironment - Initialized StandardServletEnvironment with PropertySources [servletConfigInitParams,servletContextInitParams,systemProperties,systemEnvironment]
+l21:57:20.736 [Test worker] INFO  o.s.mock.web.MockServletContext - Initializing Spring FrameworkServlet ''
+p21:57:20.736 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization started
+≠21:57:20.736 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Unable to locate MultipartResolver with name 'multipartResolver': no multipart request handling provided
+§21:57:20.736 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using LocaleResolver [org.springframework.web.servlet.i18n.AcceptHeaderLocaleResolver@297b19cf]
+ö21:57:20.736 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using ThemeResolver [org.springframework.web.servlet.theme.FixedThemeResolver@58d3dc]
+π21:57:20.736 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using RequestToViewNameTranslator [org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7c741edd]
+§21:57:20.736 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Using FlashMapManager [org.springframework.web.servlet.support.SessionFlashMapManager@1fbfc98a]
+‘21:57:20.737 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Published WebApplicationContext of servlet '' as ServletContext attribute with name [org.springframework.web.servlet.FrameworkServlet.CONTEXT.]
+z21:57:20.737 [Test worker] INFO  o.s.t.w.s.TestDispatcherServlet - FrameworkServlet '': initialization completed in 1 ms
+g21:57:20.737 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Servlet '' configured successfully
+ç21:57:20.740 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - DispatcherServlet with name '' processing GET request for [/healthcheck]
+ú21:57:20.740 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Looking up handler method for path /healthcheck
+ï21:57:20.740 [Test worker] DEBUG o.s.t.w.s.s.StandaloneMockMvcBuilder$StaticRequestMappingHandlerMapping - Returning handler method [public org.springframework.http.ResponseEntity<?> com.example.springboot.controller.HealthCheckController.handleHealthcheck(java.lang.String)]
+r21:57:20.741 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Last-Modified value for [/healthcheck] is: -1
+û21:57:20.763 [Test worker] DEBUG o.s.w.s.m.m.a.HttpEntityMethodProcessor - Written [com.example.springboot.controller.HealthCheckController$HealthcheckResponse@1665d4cc] as "application/json" using [org.springframework.http.converter.json.MappingJackson2HttpMessageConverter@7d13b9b2]
+µ21:57:20.763 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Null ModelAndView returned to DispatcherServlet with name '': assuming HandlerAdapter completed request handling
+c21:57:20.763 [Test worker] DEBUG o.s.t.w.s.TestDispatcherServlet - Successfully completed request
+b21:57:20.764 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['host']
+e21:57:20.765 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['message']
+a21:57:20.765 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['sha']
+g21:57:20.767 [Test worker] DEBUG c.j.jsonpath.internal.CompiledPath - Evaluating path: $['timestamp']

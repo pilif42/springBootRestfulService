@@ -7,13 +7,14 @@ gradlew clean build
 
 
 ## To run
-gradlew :bootRun
+        - java -jar build/libs/springbootexample-1.0.0.jar
+        - java -jar build/libs/springbootexample-1.0.0.jar --spring.config.location=file:./tmp/
 
 
 ## Tests
 To test the healthcheck:
         - curl http://localhost:8080/healthcheck -v -X GET
-        - 200 {"timestamp":1445286696772,"host":"localhost:8080","message":"OK","sha":"@sha@"}
+        - 200 {"timestamp":1445288259897,"host":"localhost:8080","message":"OK","sha":"1acdc4b881af30eb0150638c73be9ef5440d1a53"}
 
 To test the simple controller:
         - curl http://localhost:8080/greeting -v -X GET
