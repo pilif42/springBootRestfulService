@@ -12,15 +12,20 @@ gradlew :bootRun
 
 ## Tests
 To test the healthcheck:
-        - http://localhost:8080/healthcheck
+        - curl http://localhost:8080/healthcheck -v -X GET
+        - 200 {"timestamp":1445286696772,"host":"localhost:8080","message":"OK","sha":"@sha@"}
 
 To test the simple controller:
-        - default = http://localhost:8080/greeting
-        - specific = http://localhost:8080/greeting?name=Joe
+        - curl http://localhost:8080/greeting -v -X GET
+            - 200 {"id":1,"content":"Hello, World!"}
+        - curl http://localhost:8080/greeting?name=Joe -v -X GET
+            - 200 {"id":2,"content":"Hello, Joe!"}
 
 To test the controller talking to the database:
-        - default = http://localhost:8080/customer
-        - specific = http://localhost:8080/customer?id=2
+        - curl http://localhost:8080/customer -v -X GET
+            - 200 {"id":"1","firstName":"Phil","lastName":"Bross"}
+        - curl http://localhost:8080/customer?id=2 -v -X GET
+            - 200 {"id":"2","firstName":"John","lastName":"Doe"}
 
 
 ## Database

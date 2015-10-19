@@ -1,7 +1,7 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.service.CustomerService;
-import com.example.springboot.utilities.TestConstants;
+import com.example.springboot.utility.TestConstants;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -15,9 +15,9 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static com.example.springboot.utilities.CustomerBuilder.customer;
-import static com.example.springboot.utilities.MockMvcControllerAdviceHelper.mockAdviceFor;
-import static com.example.springboot.utilities.MvcHelper.getJson;
+import static com.example.springboot.utility.CustomerBuilder.customer;
+import static com.example.springboot.utility.MockMvcControllerAdviceHelper.mockAdviceFor;
+import static com.example.springboot.utility.MvcHelper.getJson;
 
 public class CustomerControllerTests {
 

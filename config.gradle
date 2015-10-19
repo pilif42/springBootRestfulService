@@ -1,0 +1,9 @@
+/**
+ * Externalised build information
+ */
+project.ext.group = 'com.example.springboot'
+project.ext.version = "1.0.0"
+project.ext.sourceCompatibility = 1.8
+
+project.ext.buildNumber = System.getenv("BUILD_NUMBER") as Integer ?: 0
+project.ext.mainClassName = 'com.example.springboot.Application'

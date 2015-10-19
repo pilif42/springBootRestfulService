@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.0" sequence="0" timestamp="1445286573937" analysisTimestamp="1445286573982" release="">
+  <Project projectName="">
+    <Jar>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\test\com\example\springboot\controller\CustomerControllerTests.class</Jar>
+    <Jar>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\test\com\example\springboot\controller\HealthCheckControllerTests$1.class</Jar>
+    <Jar>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\test\com\example\springboot\controller\HealthCheckControllerTests.class</Jar>
+    <Jar>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\test\com\example\springboot\utility\CustomerBuilder.class</Jar>
+    <Jar>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\test\com\example\springboot\utility\MockMvcControllerAdviceHelper.class</Jar>
+    <Jar>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\test\com\example\springboot\utility\MvcHelper.class</Jar>
+    <Jar>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\test\com\example\springboot\utility\TestConstants.class</Jar>
+    <AuxClasspathEntry>C:\aaaProjects\perso\springTutorials\restfulWebService\build\classes\main</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\aaaProjects\perso\springTutorials\restfulWebService\build\resources\main</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-web\1.2.2.RELEASE\a535214841176be3bf6ea28182010c9407b0f18d\spring-boot-starter-web-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-jdbc\1.2.2.RELEASE\f31c100dafea49abdda20c9a35c300603b7ea8a9\spring-boot-starter-jdbc-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-data-jpa\1.2.2.RELEASE\8a02eb70c52494af581103907587e206bad69571\spring-boot-starter-data-jpa-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\postgresql\postgresql\9.4-1200-jdbc41\postgresql-9.4-1200-jdbc41.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\com\google\code\gson\gson\2.3.1\gson-2.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-test\4.1.5.RELEASE\533c8d9da47a7c96dcdcb27c8ffa544a5e284039\spring-test-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-test\1.2.2.RELEASE\101ced201c6490090d4a0c58de311d693048753\spring-boot-starter-test-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\junit\junit\4.12\junit-4.12.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\com.jayway.jsonpath\json-path-assert\1.2.0\753bf3aa14227239f5fe72a39acb4f7a4903431b\json-path-assert-1.2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hamcrest\hamcrest-all\1.3\hamcrest-all-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.mockito\mockito-core\1.10.19\e8546f5bef4e061d8dd73895b4e8f40e3fe6effe\mockito-core-1.10.19.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter\1.2.2.RELEASE\429a2235590cb4192a3290fee8eaa6fb67a2a2f2\spring-boot-starter-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-tomcat\1.2.2.RELEASE\1ab9d88deea40fb722e63341da7e0c304790e249\spring-boot-starter-tomcat-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.4.5\c69c0cb613128c69d84a6a0304ddb9fce82e8242\jackson-databind-2.4.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hibernate\hibernate-validator\5.1.3.Final\hibernate-validator-5.1.3.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-core\4.1.5.RELEASE\4f9af02bca3066ea0d5ac450332ca210c5de1957\spring-core-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-web\4.1.5.RELEASE\8e542f560b65c920bf60cbc5db5b1097610fa94a\spring-web-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-webmvc\4.1.5.RELEASE\71b10b2ba7f6f0cce690d55e4bc8afc823d16628\spring-webmvc-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-jdbc\4.1.5.RELEASE\8df7ebc3bec108e1e71370e4dae1c8591966f622\spring-jdbc-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.apache.tomcat\tomcat-jdbc\8.0.20\7802cb686f4dec006ae31b86b283ddd45f4a3d\tomcat-jdbc-8.0.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-tx\4.1.5.RELEASE\258d04c25cdae15dce060e93bb9646f3a153475d\spring-tx-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-aop\1.2.2.RELEASE\3d14eb63a887a3c20330f308492f451caf3fc520\spring-boot-starter-aop-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hibernate\hibernate-entitymanager\4.3.8.Final\hibernate-entitymanager-4.3.8.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\javax\transaction\javax.transaction-api\1.2\javax.transaction-api-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-orm\4.1.5.RELEASE\a9b3c93d84aeec9c91cadaa0fc7adb9500166ef5\spring-orm-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.data\spring-data-jpa\1.7.2.RELEASE\cc2be6b81771fca7c3d92c6277d00e65b19807b8\spring-data-jpa-1.7.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aspects\4.1.5.RELEASE\cbdd73ca7ce12f4538c852e220299a546e60c1cf\spring-aspects-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\com\github\dblock\waffle\waffle-jna\1.7\waffle-jna-1.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hamcrest\hamcrest-library\1.3\hamcrest-library-1.3.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\com.jayway.jsonpath\json-path\1.2.0\65b0ddea22744a3ba7fe91585db599aaa812152e\json-path-1.2.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\objenesis\objenesis\2.1\objenesis-2.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot\1.2.2.RELEASE\c2495d6c08c742743366f50e25ad76f5dfcd9f75\spring-boot-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-autoconfigure\1.2.2.RELEASE\b16ddfda7cb07c482affa7d1d818641e014c5b5d\spring-boot-autoconfigure-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.boot\spring-boot-starter-logging\1.2.2.RELEASE\4d0f703a0d485e0725bd208cacb6e88653e7938a\spring-boot-starter-logging-1.2.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\yaml\snakeyaml\1.14\snakeyaml-1.14.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-core\8.0.20\5810725255089f4d0b7ab19ac70b8c4a9cd8d4a3\tomcat-embed-core-8.0.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-el\8.0.20\8050b326d0ee31ba91b06e420b57efe77a6f0516\tomcat-embed-el-8.0.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-logging-juli\8.0.20\234ee053b3dbd4bca2fc221a99d4f7d292d33e0b\tomcat-embed-logging-juli-8.0.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.apache.tomcat.embed\tomcat-embed-websocket\8.0.20\b4914491d1baa90958e5c951bec7140e65874f3\tomcat-embed-websocket-8.0.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.4.0\d6a66c7a5f01cf500377bd669507a08cfeba882a\jackson-annotations-2.4.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.4.5\6fb96728ee26edb19fe329d94f3bd4df1a97652a\jackson-core-2.4.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\javax\validation\validation-api\1.1.0.Final\validation-api-1.1.0.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\jboss\logging\jboss-logging\3.1.3.GA\jboss-logging-3.1.3.GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\com\fasterxml\classmate\1.0.0\classmate-1.0.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-aop\4.1.5.RELEASE\f370549f6e84fe25671963c3f1c3f0e90d8b4cac\spring-aop-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-beans\4.1.5.RELEASE\5f82fae5c6359ff883e5e06c2c56169286b7e137\spring-beans-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-context\4.1.5.RELEASE\483e58e37120c008df917abda73cd81f68d269\spring-context-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework\spring-expression\4.1.5.RELEASE\e55a83a99260973099833cae425716ecb4b77850\spring-expression-4.1.5.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.apache.tomcat\tomcat-juli\8.0.20\f1654901f9bd84c03c648099335dd2f7e7085f90\tomcat-juli-8.0.20.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjrt\1.8.5\39a8ff2d1f79267907f5573c090b342b040b9682\aspectjrt-1.8.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.aspectj\aspectjweaver\1.8.5\6004670a8cbcbe794d73ad00106779561ad1b180\aspectjweaver-1.8.5.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\jboss\logging\jboss-logging-annotations\1.2.0.Beta1\jboss-logging-annotations-1.2.0.Beta1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hibernate\hibernate-core\4.3.8.Final\hibernate-core-4.3.8.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\dom4j\dom4j\1.6.1\dom4j-1.6.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hibernate\common\hibernate-commons-annotations\4.0.5.Final\hibernate-commons-annotations-4.0.5.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\hibernate\javax\persistence\hibernate-jpa-2.1-api\1.0.0.Final\hibernate-jpa-2.1-api-1.0.0.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\javassist\javassist\3.18.1-GA\javassist-3.18.1-GA.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.springframework.data\spring-data-commons\1.9.2.RELEASE\6f92f93d9f837ea8a97a99e9bb850d3a08974c99\spring-data-commons-1.9.2.RELEASE.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.slf4j\jcl-over-slf4j\1.7.10\ce49a188721bc39cb9710b346ae9b7ec27b0f36b\jcl-over-slf4j-1.7.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\net\java\dev\jna\jna\4.1.0\jna-4.1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\net\java\dev\jna\jna-platform\4.1.0\jna-platform-4.1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\com\google\guava\guava\18.0\guava-18.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\net.minidev\json-smart\2.1.0\f495d2315bd42af39a2e3280f41ad0a9cfaa6fb0\json-smart-2.1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.slf4j\jul-to-slf4j\1.7.10\35dd785e5e36c957da395091c837dd2ed57b7fa3\jul-to-slf4j-1.7.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.slf4j\log4j-over-slf4j\1.7.10\e62ea5dcb382aff512c18e40fed01a30e0480cd3\log4j-over-slf4j-1.7.10.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-classic\1.1.2\b316e9737eea25e9ddd6d88eaeee76878045c6b2\logback-classic-1.1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\org\jboss\jandex\1.1.0.Final\jandex-1.1.0.Final.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\xml-apis\xml-apis\1.0.b2\xml-apis-1.0.b2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\net.minidev\asm\1.0.2\49f3068a4591b4aa6af553905ff2145685a21c2c\asm-1.0.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\ch.qos.logback\logback-core\1.1.2\2d23694879c2c12f125dac5076bdfd5d771cc4cb\logback-core-1.1.2.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\asm\asm\3.3.1\asm-3.3.1.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.m2\repository\aopalliance\aopalliance\1.0\aopalliance-1.0.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\PBrossier\.gradle\caches\modules-2\files-2.1\org.slf4j\slf4j-api\1.7.10\5b338f206827d88acd890739f400a9b7664e5984\slf4j-api-1.7.10.jar</AuxClasspathEntry>
+    <SrcDir>C:\aaaProjects\perso\springTutorials\restfulWebService\src\test\java\com\example\springboot\controller\CustomerControllerTests.java</SrcDir>
+    <SrcDir>C:\aaaProjects\perso\springTutorials\restfulWebService\src\test\java\com\example\springboot\controller\HealthCheckControllerTests.java</SrcDir>
+    <SrcDir>C:\aaaProjects\perso\springTutorials\restfulWebService\src\test\java\com\example\springboot\utility\CustomerBuilder.java</SrcDir>
+    <SrcDir>C:\aaaProjects\perso\springTutorials\restfulWebService\src\test\java\com\example\springboot\utility\MockMvcControllerAdviceHelper.java</SrcDir>
+    <SrcDir>C:\aaaProjects\perso\springTutorials\restfulWebService\src\test\java\com\example\springboot\utility\MvcHelper.java</SrcDir>
+    <SrcDir>C:\aaaProjects\perso\springTutorials\restfulWebService\src\test\java\com\example\springboot\utility\TestConstants.java</SrcDir>
+  </Project>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 19 Oct 2015 21:29:33 +0100" total_classes="7" referenced_classes="107" total_bugs="0" total_size="111" num_packages="2" java_version="1.8.0_31" vm_version="25.31-b07" cpu_seconds="11.37" clock_seconds="3.55" peak_mbytes="182.55" alloc_mbytes="3573.50" gc_seconds="0.07">
+    <PackageStats package="com.example.springboot.controller" total_bugs="0" total_types="3" total_size="58">
+      <ClassStats class="com.example.springboot.controller.CustomerControllerTests" sourceFile="CustomerControllerTests.java" interface="false" size="24" bugs="0"/>
+      <ClassStats class="com.example.springboot.controller.HealthCheckControllerTests" sourceFile="HealthCheckControllerTests.java" interface="false" size="27" bugs="0"/>
+      <ClassStats class="com.example.springboot.controller.HealthCheckControllerTests$1" sourceFile="HealthCheckControllerTests.java" interface="false" size="7" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.example.springboot.utility" total_bugs="0" total_types="4" total_size="53">
+      <ClassStats class="com.example.springboot.utility.CustomerBuilder" sourceFile="CustomerBuilder.java" interface="false" size="23" bugs="0"/>
+      <ClassStats class="com.example.springboot.utility.MockMvcControllerAdviceHelper" sourceFile="MockMvcControllerAdviceHelper.java" interface="false" size="21" bugs="0"/>
+      <ClassStats class="com.example.springboot.utility.MvcHelper" sourceFile="MvcHelper.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="com.example.springboot.utility.TestConstants" sourceFile="TestConstants.java" interface="false" size="4" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="1084" invocations="944" avgMicrosecondsPerInvocation="1149" maxMicrosecondsPerInvocation="2446" standardDeviationMircosecondsPerInvocation="490"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="355" invocations="937" avgMicrosecondsPerInvocation="379" maxMicrosecondsPerInvocation="19904" standardDeviationMircosecondsPerInvocation="892"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="188" invocations="107" avgMicrosecondsPerInvocation="1764" maxMicrosecondsPerInvocation="22675" standardDeviationMircosecondsPerInvocation="3439"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="143" invocations="192" avgMicrosecondsPerInvocation="747" maxMicrosecondsPerInvocation="20468" standardDeviationMircosecondsPerInvocation="1635"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="125" invocations="905" avgMicrosecondsPerInvocation="139" maxMicrosecondsPerInvocation="50798" standardDeviationMircosecondsPerInvocation="1693"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="54" invocations="153" avgMicrosecondsPerInvocation="359" maxMicrosecondsPerInvocation="17114" standardDeviationMircosecondsPerInvocation="1455"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="53" invocations="107" avgMicrosecondsPerInvocation="497" maxMicrosecondsPerInvocation="11308" standardDeviationMircosecondsPerInvocation="1344"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="50" invocations="94" avgMicrosecondsPerInvocation="532" maxMicrosecondsPerInvocation="2788" standardDeviationMircosecondsPerInvocation="318"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="49" invocations="21" avgMicrosecondsPerInvocation="2350" maxMicrosecondsPerInvocation="42304" standardDeviationMircosecondsPerInvocation="8938"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

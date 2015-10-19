@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="6.0">
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\Application.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\BuildInfo.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\BuildInfoConfiguration.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\DataConfiguration.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\controller\CustomerController.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\controller\GreetingController.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\controller\HealthCheckController.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\controller\RestExceptionHandler.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\domain\Customer.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\domain\Greeting.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\error\OurException.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\repository\CustomerRepository.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\repository\HealthDAO.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\repository\impl\JdbcHealthDAO.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\service\CustomerService.java">
+</file>
+<file name="C:\aaaProjects\perso\springTutorials\restfulWebService\src\main\java\com\example\springboot\service\CustomerServiceImpl.java">
+</file>
+</checkstyle>
