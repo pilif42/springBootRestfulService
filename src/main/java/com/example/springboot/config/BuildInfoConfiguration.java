@@ -1,6 +1,7 @@
-package com.example.springboot;
+package com.example.springboot.config;
 
 
+import com.example.springboot.BuildInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
