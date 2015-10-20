@@ -2,6 +2,7 @@ package com.example.springboot.config;
 
 
 import com.example.springboot.BuildInfo;
+import com.example.springboot.utility.StringConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,11 +19,11 @@ public class BuildInfoConfiguration {
     @Bean
     public BuildInfo buildInfo() {
         return new BuildInfo(
-            env.getProperty("build.info.sha", "UNKNOWN"),
-            env.getProperty("build.info.date", "UNKNOWN"),
-            env.getProperty("build.info.group", "UNKNOWN"),
-            env.getProperty("build.info.name", "UNKNOWN"),
-            env.getProperty("build.info.version", "UNKNOWN")
+            env.getProperty("build.info.sha", StringConstants.UNKNOWN),
+            env.getProperty("build.info.date", StringConstants.UNKNOWN),
+            env.getProperty("build.info.group", StringConstants.UNKNOWN),
+            env.getProperty("build.info.name", StringConstants.UNKNOWN),
+            env.getProperty("build.info.version", StringConstants.UNKNOWN)
         );
     }
 }

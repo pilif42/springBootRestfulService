@@ -2,6 +2,7 @@ package com.example.springboot.controller;
 
 import com.example.springboot.BuildInfo;
 import com.example.springboot.repository.HealthDAO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +18,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  * This will hit the database.
  */
 @Controller
+@Slf4j
 public class HealthCheckController {
 
     @Autowired
@@ -32,6 +34,7 @@ public class HealthCheckController {
     @RequestMapping(value = "/healthcheck", method = GET, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> handleHealthcheck(@RequestHeader("host") String host) {
         try {
+            log.debug("Entering handleHealthcheck...");
             healthDAO.checkDB();
             return new ResponseEntity<>(new HealthcheckResponse(host, "OK"), HttpStatus.OK);
         } catch (Exception e) {
