@@ -49,7 +49,6 @@ step 5 - insert test data
 
 - TODO:
     - add Spring JPA:
-           - clean the db: make id on Customer a long, sort out column names, etc.
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
            - replace findById with findOne in CustomerRepository
     - add Flyway
