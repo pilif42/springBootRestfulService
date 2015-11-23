@@ -18,10 +18,20 @@ public class CustomerController {
     private CustomerService customerService;
 
     @RequestMapping(value="/customer", method= RequestMethod.GET)
-    public Customer customer(@RequestParam(value="id", defaultValue="1") String id) throws OurException
+    public Customer findCustomer(@RequestParam(value="id") String id, @RequestParam(value="lastName") String lastName) throws OurException
     {
-        log.debug("debug: entering customer with id = " + id);
-        Customer result = customerService.findById(id);
+        // TODO Validate params
+        log.debug("debug: entering customer with id = {} - lastName = {}", id, lastName);
+
+        Customer result = null;
+        if (id != null) {
+            result = customerService.findById(id);
+        }
+        if (lastName != null) {
+            // TODO we should return all not just the 1st one
+            result = customerService.findByLastName(lastName).get(0);
+        }
+
         if (result == null) {
             throw new OurException(OurException.Fault.CUSTOMER_NOT_FOUND);
         }

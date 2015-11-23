@@ -23,8 +23,6 @@ To test the simple controller:
             - 200 {"id":2,"content":"Hello, Joe!"}
 
 To test the controller talking to the database:
-        - curl http://localhost:8080/customer -v -X GET
-            - 200 {"id":"1","firstName":"Phil","lastName":"Bross"}
         - curl http://localhost:8080/customer?id=2 -v -X GET
             - 200 {"id":"2","firstName":"John","lastName":"Doe"}
 
@@ -48,6 +46,7 @@ step 5 - insert test data
 
 
 - TODO:
+    - why findCustomer by id & lastName
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
            - replace findById with findOne in CustomerRepository
