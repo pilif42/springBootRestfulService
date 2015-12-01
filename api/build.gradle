@@ -1,0 +1,147 @@
+buildscript {
+    ext {
+        springBootVersion = '1.2.2.RELEASE'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+
+        maven { url 'http://repository.codehaus.org' }
+        maven { url "http://repo.spring.io/snapshot" }
+        maven { url "http://repo.spring.io/milestone" }
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath 'org.eclipse.jgit:org.eclipse.jgit:3.6.2.201501210735-r'
+    }
+}
+
+plugins {
+    id 'idea'
+}
+
+apply from: 'config.gradle'
+
+import org.eclipse.jgit.lib.Repository
+import org.eclipse.jgit.storage.file.FileRepositoryBuilder
+import org.apache.tools.ant.filters.ReplaceTokens
+
+// -----------------------------------------------------------------
+// Util methods
+// -----------------------------------------------------------------
+
+def commitSHA() {
+    FileRepositoryBuilder builder = new FileRepositoryBuilder();
+    Repository repository = builder.setGitDir(new File("${rootDir}/.git"))
+            .readEnvironment()
+            .findGitDir()
+            .build()
+
+    def branch = repository.getBranch()
+    def head = repository.resolve("HEAD")
+    def revision = head == null ? "UNKNOWN" : head.name()
+
+    project.ext.scm = [
+            branch  : branch,
+            revision: revision
+    ]
+}
+
+// -----------------------------------------------------------------
+// Build script
+// -----------------------------------------------------------------
+
+commitSHA()
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+apply plugin: 'checkstyle'
+apply plugin: 'jacoco'
+apply plugin: 'findbugs'
+
+if (!project.hasProperty('profile')) {
+    ext.profile = 'local'
+}
+
+archivesBaseName='springbootexample'
+group = project.ext.group
+version = project.ext.version
+sourceCompatibility = project.ext.sourceCompatibility
+mainClassName = project.ext.mainClassName
+bootRepackage { mainClass = mainClassName }
+
+// the build info
+println "-------------------------------------------------------------------------------------------"
+println "Running build: \n\tprofile = ${profile}\n\tbranch = ${scm.branch}\n\trevision = ${scm.revision}\n\tbuild number = ${project.ext.buildNumber}"
+println "-------------------------------------------------------------------------------------------"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://maven.java.net/content/repositories/releases/" }
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-jdbc")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.postgresql:postgresql:9.4-1200-jdbc41") {
+        exclude group: "org.slf4j"
+    }
+    compile("com.google.code.gson:gson:2.3.1")
+    compile "org.projectlombok:lombok:1.16.6"
+
+    testCompile("org.springframework:spring-test")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("junit:junit") {
+        exclude group: "org.hamcrest"
+    }
+    testCompile("com.jayway.jsonpath:json-path-assert:1.2.0") {
+        exclude group: "org.hamcrest"
+    }
+    testCompile("org.hamcrest:hamcrest-all:1.3")
+    testCompile("org.mockito:mockito-core")
+}
+
+processResources {
+    if (!(scm && scm.revision)) {
+        return
+    }
+
+    filter ReplaceTokens, tokens: [
+            "sha": scm.revision,
+            "date": java.time.ZonedDateTime.now().format(java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME),
+            "group": project.group,
+            "name": project.name,
+            "version": project.version
+    ]
+}
+
+jacocoTestReport {
+    sourceSets sourceSets.main
+    reports {
+        xml.enabled true
+        html.enabled false
+        csv.enabled false
+    }
+}
+
+findbugs {
+    toolVersion = '3.0.0'
+    ignoreFailures = true
+}
+
+checkstyle {
+    toolVersion = "6.0"
+    config = resources.text.fromFile("config/checkstyle/checkstyle.xml")
+    sourceSets = [sourceSets.main]
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}

@@ -1,30 +1,11 @@
-## To start this project, I initially followed http://spring.io/guides/gs/rest-service/ :
-		- chose the Gradle build option
-
-
 ## To build
 gradlew clean build
+Note that the 1st time around after the refactoring and the addition of directories (smokeytests, etc.), I had to do first: gradle wrapper
 
 
 ## To run
         - java -jar build/libs/springbootexample-1.0.0.jar
         - java -jar build/libs/springbootexample-1.0.0.jar --spring.config.location=file:./tmp/
-
-
-## Tests
-To test the healthcheck:
-        - curl http://localhost:8080/healthcheck -v -X GET
-        - 200 {"timestamp":1445288259897,"host":"localhost:8080","message":"OK","sha":"1acdc4b881af30eb0150638c73be9ef5440d1a53"}
-
-To test the simple controller:
-        - curl http://localhost:8080/greeting -v -X GET
-            - 200 {"id":1,"content":"Hello, World!"}
-        - curl http://localhost:8080/greeting?name=Joe -v -X GET
-            - 200 {"id":2,"content":"Hello, Joe!"}
-
-To test the controller talking to the database:
-        - curl http://localhost:8080/customer?id=2 -v -X GET
-            - 200 {"id":"2","firstName":"John","lastName":"Doe"}
 
 
 ## Database
@@ -46,6 +27,8 @@ step 5 - insert test data
 
 
 - TODO:
+    - make 'api' a module in IntelliJ and run the TheApp
+    - add some Cucumber tests
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
            - replace findById with findOne in CustomerRepository
