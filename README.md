@@ -46,7 +46,6 @@ step 5 - insert test data
 
 
 - TODO:
-    - why findCustomer by id & lastName
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
            - replace findById with findOne in CustomerRepository
