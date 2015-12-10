@@ -4,8 +4,9 @@ Note that the 1st time around after the refactoring and the addition of director
 
 
 ## To run
-        - java -jar build/libs/springbootexample-1.0.0.jar
-        - java -jar build/libs/springbootexample-1.0.0.jar --spring.config.location=file:./tmp/
+        - from C:\aaaProjects\perso\springTutorials\restfulWebService\api
+                - java -jar build/libs/springbootexample-1.0.0.jar
+                - java -jar build/libs/springbootexample-1.0.0.jar --spring.config.location=file:./tmp/
 
 
 ## Database
@@ -27,7 +28,6 @@ step 5 - insert test data
 
 
 - TODO:
-    - make 'api' a module in IntelliJ and run the TheApp
     - add some Cucumber tests
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
