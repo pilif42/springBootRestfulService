@@ -1,0 +1,113 @@
+plugins {
+    id 'java'
+    id 'com.terrafolio.jenkins' version '1.2.3'
+}
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+project.ext.versions = [
+        spring: '4.1.5.RELEASE',
+        jsonpath: '1.2.0',
+        cukes: '1.2.2',
+        junit: '4.12',
+        httpclient: '4.4',
+        fluentHc: '4.4',
+        cio: '2.4'
+]
+
+if (new File("$rootProject.projectDir/profile.gradle").exists()) {
+    apply from: "$rootProject.projectDir/profile.gradle"
+}
+
+if (!project.hasProperty('profile')) {
+    ext.profile = 'local'
+}
+
+test {
+    systemProperty "cuc.env", profile
+}
+
+println "Applying build profile: ${profile}"
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "https://maven.java.net/content/repositories/releases/" }
+    maven { url "http://repo.spring.io/snapshot" }
+    maven { url "http://repo.spring.io/milestone" }
+}
+
+dependencies {
+    compile(
+            "org.apache.commons:commons-lang3:3.4",
+            "org.fluentlenium:fluentlenium-core:0.10.3",
+            "org.fluentlenium:fluentlenium-assertj:0.10.3",
+            "org.fluentlenium:fluentlenium-cucumber:0.10.3",
+            "org.json:json:20141113",
+            "org.springframework:spring-web:4.2.1.RELEASE"
+    )
+
+    testCompile "junit:junit:${versions.junit}"
+    testCompile "org.springframework:spring-test:${versions.spring}"
+    testCompile "com.jayway.jsonpath:json-path:${versions.jsonpath}"
+    testCompile "com.jayway.jsonpath:json-path-assert:${versions.jsonpath}"
+
+    testCompile "info.cukes:cucumber-core:${versions.cukes}"
+    testCompile "info.cukes:cucumber-junit:${versions.cukes}"
+    testCompile "info.cukes:cucumber-java:${versions.cukes}"
+
+    testCompile 'net.masterthought:cucumber-reporting:0.0.17'
+
+    testCompile "org.apache.httpcomponents:httpclient:${versions.httpclient}"
+    compile "org.apache.httpcomponents:fluent-hc:${versions.fluentHc}"
+    testCompile "commons-io:commons-io:${versions.cio}"
+    testCompile "com.fasterxml.jackson.core:jackson-core:2.3.3"
+    testCompile "com.fasterxml.jackson.core:jackson-databind:2.3.3"
+    testCompile 'info.cukes:cucumber-picocontainer:1.2.2'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}
+
+task cucumber(description: 'Runs the cucumber tests.', group: 'Cucumber') {
+    dependsOn assemble, compileTestJava, processTestResources, testClasses
+
+    doLast {
+        def argList = [
+
+                '--plugin', 'pretty',
+                '--plugin', 'html:build/cucumber-html-reports',
+                '--plugin', 'json:build/cucumber/json/cucumber.json',
+                '--glue', "classpath:uk.os.app.steps",
+                '--tags', '~@ignore'
+        ]
+
+        /**
+         * If tags are given as additional arguments parameter they are added to
+         * the gradle w call
+         * e.g.: ./gradlew -PadditionalArgs="--tags @foo,@bar --tags @baz"
+         */
+        if (project.hasProperty('additionalArgs') && additionalArgs instanceof String) {
+            def argString = (String) additionalArgs;
+            argList.addAll(argString.split(" "))
+        }
+
+        //  determine feature directory
+        def absolutePathToFeatureDir = "${sourceSets.test.resources.srcDirs.iterator().next()}/com/example/springboot/"
+
+        if (project.hasProperty('feature') && project.feature) {
+            feature.split(" ").each() { argList.add(absolutePathToFeatureDir.plus(it)) }
+        } else {
+            // run all features (cucumber will search recursively)
+            argList.add(absolutePathToFeatureDir)
+        }
+        javaexec {
+            main = "cucumber.api.cli.Main"
+            classpath = configurations.testRuntime + sourceSets.main.output + sourceSets.test.output
+            args = argList
+        }
+    }
+}
