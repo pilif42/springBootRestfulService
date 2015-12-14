@@ -1,2 +1,2 @@
-- curl http://localhost:8080/customer?id=2 -v -X GET
+- curl http://localhost:8089/customer?id=2 -v -X GET
 - 200 {"id":"2","firstName":"John","lastName":"Doe"}

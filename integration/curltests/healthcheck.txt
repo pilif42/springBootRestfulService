@@ -1,2 +1,2 @@
-- curl http://localhost:8080/healthcheck -v -X GET
-- 200 {"timestamp":1445288259897,"host":"localhost:8080","message":"OK","sha":"1acdc4b881af30eb0150638c73be9ef5440d1a53"}
+- curl http://localhost:8089/healthcheck -v -X GET
+- 200 {"timestamp":1445288259897,"host":"localhost:8089","message":"OK","sha":"1acdc4b881af30eb0150638c73be9ef5440d1a53"}

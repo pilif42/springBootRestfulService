@@ -44,7 +44,7 @@ public class HealthCheckControllerTests {
     public void test_healthcheck() throws Exception {
         Mockito.doNothing().when(healthDAO).checkDB();
 
-        String myhost = "localhost:8080";
+        String myhost = "localhost:8089";
         Long start = System.currentTimeMillis();
 
         mockMvc.perform(MockMvcRequestBuilders.get("/healthcheck").accept(MediaType.APPLICATION_JSON).header("host", myhost))

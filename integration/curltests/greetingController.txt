@@ -1,6 +1,6 @@
-- curl http://localhost:8080/greeting -v -X GET
+- curl http://localhost:8089/greeting -v -X GET
 - 200 {"id":1,"content":"Hello, World!"}
 
 
-- curl http://localhost:8080/greeting?name=Joe -v -X GET
+- curl http://localhost:8089/greeting?name=Joe -v -X GET
 - 200 {"id":2,"content":"Hello, Joe!"}
