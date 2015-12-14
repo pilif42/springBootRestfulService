@@ -4,8 +4,8 @@ restful web service. It is not intended as a full acceptance suite.
 
 
 ## Usage
-To run the suite, use
-    `gradle clean test --info`
+To run the suite, Git Bash window to /c/aaaProjects/perso/springTutorials/restfulWebService/smoketest
+    `gradle clean test --info -Pprofile=local`
     `gradle clean test --info -Pprofile=ci`
 Note that it is really important to add the --info, as this is the logging level at which a lot of useful Cucumber output
 is spewed out at. Generated steps, for instance.

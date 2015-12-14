@@ -81,7 +81,7 @@ task cucumber(description: 'Runs the cucumber tests.', group: 'Cucumber') {
                 '--plugin', 'pretty',
                 '--plugin', 'html:build/cucumber-html-reports',
                 '--plugin', 'json:build/cucumber/json/cucumber.json',
-                '--glue', "classpath:uk.os.app.steps",
+                '--glue', "classpath:com.example.sprinboot.steps",
                 '--tags', '~@ignore'
         ]
 

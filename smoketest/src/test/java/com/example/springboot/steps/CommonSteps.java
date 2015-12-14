@@ -5,6 +5,7 @@ import com.jayway.jsonpath.JsonPath;
 import cucumber.api.java.en.Then;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CommonSteps {
 
@@ -25,6 +26,18 @@ public class CommonSteps {
     @Then("^the response should contain the field \"([^\"]*)\" with value \"([^\"]*)\"$")
     public void the_response_should_contain_the_field_with_value(String field, String value) throws Throwable {
         assertEquals(value, JsonPath.read(responseAware.getBody(), "$." + field));
+    }
+
+    @Then("^the response should contain the field \"([^\"]*)\" with a long value$")
+    public void the_response_should_contain_the_field_with_long_value(String field) throws Throwable {
+        Object obj = JsonPath.read(responseAware.getBody(), "$." + field);
+        assertTrue(obj instanceof Long);
+    }
+
+    @Then("^the response should contain the field \"([^\"]*)\" with a String value$")
+    public void the_response_should_contain_the_field_with_string_value(String field) throws Throwable {
+        Object obj = JsonPath.read(responseAware.getBody(), "$." + field);
+        assertTrue(obj instanceof String);
     }
 
 }

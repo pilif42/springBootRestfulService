@@ -28,7 +28,10 @@ step 5 - insert test data
 
 
 - TODO:
-    - add some Cucumber tests
+    - Cucumber tests:
+           - healthcheck does run inside IDE but not from command line
+           - add more tests for other endpoints
+
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
            - replace findById with findOne in CustomerRepository
