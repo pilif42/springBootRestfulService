@@ -4,3 +4,7 @@
 
 - curl http://localhost:8089/greeting?name=Joe -v -X GET
 - 200 {"id":2,"content":"Hello, Joe!"}
+
+
+- curl -H "Content-Type: application/json" -v -X POST -d @validGplaySubscription.json http://localhost:8089/greeting
+- 200

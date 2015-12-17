@@ -29,7 +29,8 @@ step 5 - insert test data
 
 - TODO:
     - Cucumber tests:
-           - add more tests for other endpoints: do a Post, mahe use of Properties as in User Smokey
+            - tidy up the code on post in GreetingController
+            - add more tests for other endpoints: do a Post, make use of Properties as in User Smokey
 
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
