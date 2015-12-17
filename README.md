@@ -29,8 +29,7 @@ step 5 - insert test data
 
 - TODO:
     - Cucumber tests:
-           - healthcheck does run inside IDE but not from command line
-           - add more tests for other endpoints
+           - add more tests for other endpoints: do a Post, mahe use of Properties as in User Smokey
 
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer

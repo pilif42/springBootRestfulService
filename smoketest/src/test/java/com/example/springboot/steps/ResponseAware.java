@@ -16,14 +16,10 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
 import java.net.URI;
-import java.util.Properties;
 
 public class ResponseAware {
 
     private World world;
-
-    // For building requests
-    Properties properties = new Properties();
 
     // For processing a response
     private String body;
@@ -44,6 +40,11 @@ public class ResponseAware {
 
     public void invokeDefaultHealthcheckEndpoint() throws IOException, AuthenticationException {
         final String url = "/healthcheck";
+        invokeGet(world.getEndpoint(url));
+    }
+
+    public void invokeGreetingEndpointWithName(String name) throws IOException, AuthenticationException {
+        final String url = String.format("/greeting?name=%s", name);
         invokeGet(world.getEndpoint(url));
     }
 
