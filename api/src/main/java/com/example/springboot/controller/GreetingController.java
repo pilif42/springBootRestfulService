@@ -1,6 +1,7 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.domain.Greeting;
+import com.example.springboot.domain.Order;
 import com.example.springboot.domain.ReceiptRequest;
 import com.example.springboot.domain.SignedReceipt;
 import com.example.springboot.error.OurException;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -59,18 +61,16 @@ public class GreetingController {
             throw new OurException(OurException.Fault.ERROR_PARSING_RECEIPT_REQUEST);
         }
 
-        // TODO Do sth with the receipt
+        // TODO Use a service to validate the receipt
         log.debug("receipt = {}", signedReceipt);
 
-        return new ResponseEntity<>(HttpStatus.OK);
-        // TODO return new ResponseEntity<>(
-//        Order.builder()
-//            .withEndDate(new Date(purchase.getExpiryTimeMillis()))
-//            .withStartDate(new Date(purchase.getStartTimeMillis()))
-//            .withOrderId(receipt.getReceipt().getOrderId())
-//            .withProductId(receipt.getReceipt().getProductId())
-//            .build(),
-//            HttpStatus.OK
-//        );
+        return new ResponseEntity<>(
+            Order.builder()
+                .withStartDate(new Date(System.currentTimeMillis()))
+                .withOrderId(signedReceipt.getPurchaseData().getOrderId())
+                .withProductId(signedReceipt.getPurchaseData().getProductId())
+                .build(),
+            HttpStatus.OK
+        );
     }
 }

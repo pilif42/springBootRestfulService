@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.http.HttpStatus;
 
 import java.io.IOException;
 
@@ -11,23 +12,23 @@ import java.io.IOException;
 public class OurException extends RuntimeException {
 
     public static enum Fault {
-        CUSTOMER_NOT_FOUND(404, "UA-GP-102", "Customer details not found"),
-        DATA_SIGNATURE_NOT_FOUND(500, "AS-GO-100", "Unable to find field 'data_signature'"),
-        PURCHASE_DATA_NOT_FOUND(500, "AS-GO-100", "Unable to find field for 'purchase_data'"),
-        ERROR_PARSING_PURCHASE_DATA(500, "AS-GO-100", "Unable to parse field 'purchase_data'"),
-        ERROR_PARSING_RECEIPT_REQUEST(500, "AS-GO-100", "Failed to parse receipt request");
+        CUSTOMER_NOT_FOUND(HttpStatus.NOT_FOUND, "UA-GP-102", "Customer details not found"),
+        DATA_SIGNATURE_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to find field 'data_signature'"),
+        PURCHASE_DATA_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to find field for 'purchase_data'"),
+        ERROR_PARSING_PURCHASE_DATA(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to parse field 'purchase_data'"),
+        ERROR_PARSING_RECEIPT_REQUEST(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Failed to parse receipt request");
 
-        private final int httpStatus;
+        private final HttpStatus httpStatus;
         private final String message;
         private final String code;
 
-        Fault(int httpStatus, String code, String message) {
+        Fault(HttpStatus httpStatus, String code, String message) {
             this.httpStatus = httpStatus;
             this.message = message;
             this.code = code;
         }
 
-        public int getHttpStatus() {
+        public HttpStatus getHttpStatus() {
             return httpStatus;
         }
         public String getMessage() {

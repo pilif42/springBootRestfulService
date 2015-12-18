@@ -28,9 +28,12 @@ step 5 - insert test data
 
 
 - TODO:
+    - Unit tests:
+           - greeting controller and post
+
     - Cucumber tests:
-            - tidy up the code on post in GreetingController
-            - add more tests for other endpoints: do a Post, make use of Properties as in User Smokey
+          - remove @ignore on the test with valid gplay receipt and correct
+          - add a test to make use of Properties as in User Smokey
 
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer

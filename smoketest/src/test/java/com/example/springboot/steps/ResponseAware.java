@@ -21,6 +21,8 @@ public class ResponseAware {
 
     private World world;
 
+    private String googleReceipt;
+
     // For processing a response
     private String body;
     private int status;
@@ -28,6 +30,14 @@ public class ResponseAware {
 
     public ResponseAware(final World world) {
         this.world = world;
+    }
+
+    public void setGoogleReceipt(final String googleReceipt) {
+        this.googleReceipt = googleReceipt;
+    }
+
+    public void postToGreetingEndpoint() throws IOException, AuthenticationException {
+        invokePost(world.getEndpoint("/greeting"), googleReceipt, ContentType.APPLICATION_JSON);
     }
 
     public int getStatus() {
