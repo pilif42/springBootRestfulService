@@ -5,11 +5,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ReceiptRequest {
 
-    public final String receipt;
+    public final String appstoreReceipt;
 
     @JsonCreator
-    public ReceiptRequest(@JsonProperty("appstore_receipt") String receipt) {
-        this.receipt = receipt;
+    public ReceiptRequest(@JsonProperty("appstore_receipt") String appstoreReceipt) {
+        this.appstoreReceipt = appstoreReceipt;
     }
 
 }

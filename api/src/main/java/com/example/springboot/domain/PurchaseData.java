@@ -12,7 +12,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Receipt {
+public class PurchaseData {
 
     public enum PurchaseState {
         PURCHASED,  // 0

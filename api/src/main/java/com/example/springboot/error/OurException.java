@@ -13,9 +13,9 @@ public class OurException extends RuntimeException {
     public static enum Fault {
         CUSTOMER_NOT_FOUND(404, "UA-GP-102", "Customer details not found"),
         DATA_SIGNATURE_NOT_FOUND(500, "AS-GO-100", "Unable to find field 'data_signature'"),
-        RAW_RECEIPT_NOT_FOUND(500, "AS-GO-100", "Unable to find field for raw receipt"),
-        ERROR_PARSING_RECEIPT(500, "AS-GO-100", "Unable to find field for raw receipt"),
-        ERROR_PARSING_INCOMING_GPLAY_RECEIPT(500, "AS-GO-100", "Failed to parse incoming Google receipt");;
+        PURCHASE_DATA_NOT_FOUND(500, "AS-GO-100", "Unable to find field for 'purchase_data'"),
+        ERROR_PARSING_PURCHASE_DATA(500, "AS-GO-100", "Unable to parse field 'purchase_data'"),
+        ERROR_PARSING_RECEIPT_REQUEST(500, "AS-GO-100", "Failed to parse receipt request");
 
         private final int httpStatus;
         private final String message;

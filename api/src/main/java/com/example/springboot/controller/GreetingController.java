@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.concurrent.atomic.AtomicLong;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -51,17 +50,17 @@ public class GreetingController {
     }
 
     @RequestMapping(value="/greeting", method=RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> postAGreeting(@RequestBody ReceiptRequest receiptRequest) throws IOException {
-        SignedReceipt receipt = null;
+    public ResponseEntity<?> validateGoogleReceipts(@RequestBody ReceiptRequest receiptRequest) throws IOException {
+        SignedReceipt signedReceipt = null;
         try {
-            receipt = mapper.readValue(receiptRequest.receipt, SignedReceipt.class);
+            signedReceipt = mapper.readValue(receiptRequest.appstoreReceipt, SignedReceipt.class);
         } catch (JsonProcessingException e) {
             log.error("Failed to parse incoming Google receipt: {}", e.getMessage());
-            throw new OurException(OurException.Fault.ERROR_PARSING_INCOMING_GPLAY_RECEIPT);
+            throw new OurException(OurException.Fault.ERROR_PARSING_RECEIPT_REQUEST);
         }
 
         // TODO Do sth with the receipt
-        log.debug("receipt = {}", receipt);
+        log.debug("receipt = {}", signedReceipt);
 
         return new ResponseEntity<>(HttpStatus.OK);
         // TODO return new ResponseEntity<>(

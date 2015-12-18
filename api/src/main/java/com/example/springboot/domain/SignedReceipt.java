@@ -27,41 +27,41 @@ public class SignedReceipt {
     @JsonProperty("data_signature")
     private String signature;
 
-    private Receipt receipt;
+    private PurchaseData purchaseData;
 
     @JsonIgnore
-    private String rawReceipt;
+    private String rawReceipt;  // required for the validation
 
     public static class SignedReceiptDeserializer extends JsonDeserializer<SignedReceipt> {
 
         @Override
         public SignedReceipt deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-            SignedReceipt receipt = new SignedReceipt();
+            SignedReceipt signedReceipt = new SignedReceipt();
 
             JsonNode node = jsonParser.getCodec().readTree(jsonParser);
 
             if (!node.has("data_signature")) {
                 throw new OurException(OurException.Fault.DATA_SIGNATURE_NOT_FOUND);
             }
-            receipt.signature = node.get("data_signature").asText();
+            signedReceipt.signature = node.get("data_signature").asText();
 
             String nodeName = "purchase_data";
             if (node.has("receipt")) {
                 nodeName = "receipt";
             }
             if (!node.has(nodeName)) {
-                throw new OurException(OurException.Fault.RAW_RECEIPT_NOT_FOUND);
+                throw new OurException(OurException.Fault.PURCHASE_DATA_NOT_FOUND);
             }
-            receipt.rawReceipt = node.get(nodeName).toString();
+            signedReceipt.rawReceipt = node.get(nodeName).toString();
 
             try {
-                receipt.receipt = jsonParser.getCodec().treeToValue(node.get(nodeName), Receipt.class);
+                signedReceipt.purchaseData = jsonParser.getCodec().treeToValue(node.get(nodeName), PurchaseData.class);
             } catch (JsonProcessingException e) {
                 log.error("JsonProcessingException with message = = {}", e.getMessage());
-                throw new OurException(OurException.Fault.ERROR_PARSING_RECEIPT);
+                throw new OurException(OurException.Fault.ERROR_PARSING_PURCHASE_DATA);
             }
 
-            return receipt;
+            return signedReceipt;
         }
     }
 }
