@@ -29,7 +29,7 @@ step 5 - insert test data
 
 - TODO:
     - Unit tests:
-           - greeting controller and post
+           - verify that we have a date
 
     - Cucumber tests:
           - remove @ignore on the test with valid gplay receipt and correct

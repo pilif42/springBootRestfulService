@@ -57,8 +57,8 @@ public class CustomerControllerTests {
         ResultActions actions = mockMvc.perform(getJson("/customer").param("id", TestConstants.CUSTOMER_ID_1).param("lastName", testLastName));
 
         actions.andExpect(status().isOk());
-        actions.andExpect(handler().methodName("findCustomer"));
         actions.andExpect(handler().handlerType(CustomerController.class));
+        actions.andExpect(handler().methodName("findCustomer"));
         actions.andExpect(jsonPath("$.id", is(TestConstants.CUSTOMER_ID_1)));
         actions.andExpect(jsonPath("$.firstName", is(testFirstName)));
         actions.andExpect(jsonPath("$.lastName", is(testLastName)));
