@@ -29,7 +29,7 @@ step 5 - insert test data
 
 - TODO:
     - Unit tests:
-           - verify that we have a date
+           - check the regex for a date: TODO in MatchesPattern
 
     - Cucumber tests:
           - remove @ignore on the test with valid gplay receipt and correct

@@ -12,13 +12,16 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
+
+import static com.example.springboot.utility.MatchesPattern.isADate;
 
 import static com.example.springboot.utility.MockMvcControllerAdviceHelper.mockAdviceFor;
 import static com.example.springboot.utility.MvcHelper.getJson;
 import static com.example.springboot.utility.MvcHelper.postJson;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.isA;
+
+import static org.hamcrest.CoreMatchers.startsWith;
 import static org.junit.Assert.assertNotNull;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.handler;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -74,9 +77,8 @@ public class GreetingControllerTests {
         actions.andExpect(status().is2xxSuccessful());
         actions.andExpect(jsonPath("$.product_id", is("infinite_gas")));
         actions.andExpect(jsonPath("$.start_date", isA(String.class)));
-        // TODO verify that it is a date with sth like
-        // DateFormat formatter = new SimpleDateFormat("d-MMM-yyyy,HH:mm:ss aaa");
-        // Date date = formatter.parse(testDate);
+        actions.andExpect(jsonPath("$.start_date", startsWith("2015")));
+        actions.andExpect(jsonPath("$.start_date", isADate()));
     }
 
     private String getValidGplayReceipt() throws IOException {
