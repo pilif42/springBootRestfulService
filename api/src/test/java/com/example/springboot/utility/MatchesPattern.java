@@ -33,8 +33,9 @@ public class MatchesPattern extends TypeSafeMatcher<String> {
 
     @Factory
     public static <T> Matcher<String> isADate() {
-        // TODO define regex for 2015-12-18T21:13:29
-        Pattern datePattern = Pattern.compile(".");
+        // Format is yyyy-MM-dd'T'HH:mm:ss
+        String regex = "[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}";
+        Pattern datePattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
         return new MatchesPattern(datePattern);
     }
 

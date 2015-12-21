@@ -28,9 +28,6 @@ step 5 - insert test data
 
 
 - TODO:
-    - Unit tests:
-           - check the regex for a date: TODO in MatchesPattern
-
     - Cucumber tests:
           - remove @ignore on the test with valid gplay receipt and correct
           - add a test to make use of Properties as in User Smokey

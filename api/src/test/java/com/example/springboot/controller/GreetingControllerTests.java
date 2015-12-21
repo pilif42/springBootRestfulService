@@ -76,8 +76,6 @@ public class GreetingControllerTests {
         actions.andExpect(handler().methodName("validateGoogleReceipts"));
         actions.andExpect(status().is2xxSuccessful());
         actions.andExpect(jsonPath("$.product_id", is("infinite_gas")));
-        actions.andExpect(jsonPath("$.start_date", isA(String.class)));
-        actions.andExpect(jsonPath("$.start_date", startsWith("2015")));
         actions.andExpect(jsonPath("$.start_date", isADate()));
     }
 
