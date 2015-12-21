@@ -28,9 +28,6 @@ step 5 - insert test data
 
 
 - TODO:
-    - Cucumber tests:
-          - add a test to make use of Properties as in User Smokey
-
     - add Spring Security to the mix.
 
     - add Spring JPA:
@@ -42,4 +39,3 @@ step 5 - insert test data
     - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
 
     - hook up with hbase: http://hbase.apache.org/
-    
