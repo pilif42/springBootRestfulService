@@ -22,8 +22,9 @@ Feature: Validating greeting requests
 #############################################################################
 # Section validating a valid GPlay receipt
 #############################################################################
-  @ignore
   Scenario: Validate a valid GPlay receipt
     Given a valid JSON Google receipt
     When I post the receipt to the Greeting endpoint
     Then the response status should be 200
+    And the response should contain the field "product_id" with value "infinite_gas"
+    And the response should contain the field "start_date" with value matching the regex "[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}"

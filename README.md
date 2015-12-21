@@ -29,13 +29,17 @@ step 5 - insert test data
 
 - TODO:
     - Cucumber tests:
-          - remove @ignore on the test with valid gplay receipt and correct
           - add a test to make use of Properties as in User Smokey
+
+    - add Spring Security to the mix.
 
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
            - replace findById with findOne in CustomerRepository
+
     - add Flyway
+
     - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
+
     - hook up with hbase: http://hbase.apache.org/
-    - add Spring Security to the mix.
+    

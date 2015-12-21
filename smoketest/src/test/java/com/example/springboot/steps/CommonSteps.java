@@ -4,6 +4,8 @@ import com.example.springboot.util.World;
 import com.jayway.jsonpath.JsonPath;
 import cucumber.api.java.en.Then;
 
+import java.util.regex.Pattern;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -26,6 +28,13 @@ public class CommonSteps {
     @Then("^the response should contain the field \"([^\"]*)\" with value \"([^\"]*)\"$")
     public void the_response_should_contain_the_field_with_value(String field, String value) throws Throwable {
         assertEquals(value, JsonPath.read(responseAware.getBody(), "$." + field));
+    }
+
+    @Then("^the response should contain the field \"([^\"]*)\" with value matching the regex \"([^\"]*)\"")
+    public void the_response_should_contain_the_field_with_value_matching_pattern(String field, String regex) throws Throwable {
+        String jsonString = JsonPath.read(responseAware.getBody(), "$." + field);
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+        assertTrue(pattern.matcher(jsonString).matches());
     }
 
     @Then("^the response should contain the field \"([^\"]*)\" with an integer value$")
