@@ -1,6 +1,6 @@
 ## To build
-gradlew clean build
-Note that the 1st time around after the refactoring and the addition of directories (smokeytests, etc.), I had to do first: gradle wrapper
+        - gradlew clean build
+        - Note that the 1st time around after the refactoring and the addition of directories (smokeytests, etc.), I had to do first: gradle wrapper
 
 
 ## To run
@@ -27,8 +27,18 @@ step 5 - insert test data
     scripts are located in `<ROOT>/database/<RDBM>/<VERSION>/testdata.<APP-VERSION>.sql`
 
 
+## Securing the API
+step 1 - in Gradle, add the dependency compile("org.springframework.boot:spring-boot-starter-security")
+
+step 2 - in application.properties, add security.user.name and security.user.password
+
+step 3 - restart the app and now basic authentication is required on endpoints.
+
+
 - TODO:
-    - add Spring Security to the mix.
+    - Spring Security:
+            - We probably do not want the healthcheck to be under basic auth so look at configuring it per endpoint
+            - Other auth option than basic auth
 
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
