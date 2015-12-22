@@ -27,7 +27,7 @@ step 5 - insert test data
     scripts are located in `<ROOT>/database/<RDBM>/<VERSION>/testdata.<APP-VERSION>.sql`
 
 
-## Securing the API
+## Securing the API - Basic Authentication on ALL endpoints
 step 1  - in Gradle, add the dependency compile("org.springframework.boot:spring-boot-starter-security")
 
 step 2  - in application.properties, add security.user.name and security.user.password
@@ -37,10 +37,17 @@ step 3  - restart the app and now basic authentication is required on all endpoi
         - But, cucumber tests were failing.
 
 
+## Securing the API - Only a specific endpoint (ie POST to /greeting)
+step 1 - create the class SecurityConfiguration
+
+step 2 - add in GreetingController @Secured(SecurityConfiguration.INBOUND_SECURED_ENDPOINTS_ROLE)
+
+step 3  - restart the app and now basic authentication is required on POST to /greeting.
+
+
 - TODO:
     - Spring Security:
-            - We probably do not want the healthcheck to be under basic auth so look at configuring it per endpoint
-            - Other auth option than basic auth
+            - Implement auth different from basic auth
 
     - Spring Cloud server:
             - configure one.

@@ -1,5 +1,6 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.config.SecurityConfiguration;
 import com.example.springboot.domain.Greeting;
 import com.example.springboot.domain.Order;
 import com.example.springboot.domain.ReceiptRequest;
@@ -11,6 +12,7 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,6 +53,7 @@ public class GreetingController {
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
 
+    @Secured(SecurityConfiguration.INBOUND_SECURED_ENDPOINTS_ROLE)
     @RequestMapping(value="/greeting", method=RequestMethod.POST, produces = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> validateGoogleReceipts(@RequestBody ReceiptRequest receiptRequest) throws IOException {
         SignedReceipt signedReceipt = null;

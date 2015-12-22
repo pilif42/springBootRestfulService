@@ -1,14 +1,20 @@
-curl http://localhost:8089/greeting -v -X GET --user user:mypassword
+curl http://localhost:8089/greeting -v -X GET
 200 {"id":1,"content":"Hello, World!"}
 
 
-curl http://localhost:8089/greeting?name=Joe -v -X GET --user user:mypassword
+curl http://localhost:8089/greeting?name=Joe -v -X GET
 200 {"id":2,"content":"Hello, Joe!"}
 
 
-curl -H "Content-Type: application/json" -v -X POST -d @validGplaySubscription.json http://localhost:8089/greeting --user user:mypassword
+curl -H "Content-Type: application/json" -v -X POST -d @validGplaySubscription.json http://localhost:8089/greeting
+401 {"timestamp":1450821436340,"status":401,"error":"Unauthorized","exception":"org.
+    springframework.security.access.AccessDeniedException","message":"Full authentic
+    ation is required to access this resource","path":"/greeting"}
+
+
+curl -H "Content-Type: application/json" -v -X POST -d @validGplaySubscription.json http://localhost:8089/greeting --user user:inboundpassword
 200 {"product_id":"infinite_gas","start_date":"2015-12-18T21:13:29"}
 
 
-curl -H "Content-Type: application/json" -v -X POST -d @invalidGplaySubscription.json http://localhost:8089/greeting --user user:mypassword
+curl -H "Content-Type: application/json" -v -X POST -d @invalidGplaySubscription.json http://localhost:8089/greeting --user user:inboundpassword
 500 {"error":{"code":"AS-GO-100","timestamp":1450474410555,"message":"Failed to parse receipt request"}}
