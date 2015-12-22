@@ -28,15 +28,18 @@ step 5 - insert test data
 
 
 ## Securing the API
-step 1 - in Gradle, add the dependency compile("org.springframework.boot:spring-boot-starter-security")
+step 1  - in Gradle, add the dependency compile("org.springframework.boot:spring-boot-starter-security")
 
-step 2 - in application.properties, add security.user.name and security.user.password
+step 2  - in application.properties, add security.user.name and security.user.password
 
-step 3 - restart the app and now basic authentication is required on endpoints.
-
+step 3  - restart the app and now basic authentication is required on all endpoints.
+        - Note that we did not have to touch the Unit tests. Still green barring.
+        - But, cucumber tests were failing.
+        
 
 - TODO:
     - Spring Security:
+            - Cucumber tests to be fixed
             - We probably do not want the healthcheck to be under basic auth so look at configuring it per endpoint
             - Other auth option than basic auth
 
