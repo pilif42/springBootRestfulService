@@ -35,13 +35,18 @@ step 2  - in application.properties, add security.user.name and security.user.pa
 step 3  - restart the app and now basic authentication is required on all endpoints.
         - Note that we did not have to touch the Unit tests. Still green barring.
         - But, cucumber tests were failing.
-        
+
 
 - TODO:
     - Spring Security:
             - Cucumber tests to be fixed
             - We probably do not want the healthcheck to be under basic auth so look at configuring it per endpoint
             - Other auth option than basic auth
+
+    - Spring Cloud server:
+            - configure one.
+            - add our props in there and encrypt the relevant ones
+            - pull props from there
 
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
