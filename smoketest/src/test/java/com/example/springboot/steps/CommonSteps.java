@@ -2,6 +2,7 @@ package com.example.springboot.steps;
 
 import com.example.springboot.util.World;
 import com.jayway.jsonpath.JsonPath;
+import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 import java.util.regex.Pattern;
@@ -10,6 +11,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class CommonSteps {
+
+    private static final String BASIC_AUTH_USERNAME_PROPERTY_KEY = "cuc.basic.auth.username";
+    private static final String BASIC_AUTH_PASSWORD_PROPERTY_KEY = "cuc.basic.auth.password";
 
     private final ResponseAware responseAware;
     private final World world;
@@ -55,4 +59,8 @@ public class CommonSteps {
         assertTrue(obj instanceof String);
     }
 
+    @Given("^valid basic authentication credentials are provided$")
+    public void valid_basic_authentication_credentials_are_provided() throws Throwable {
+        responseAware.enableBasicAuth(world.getProperty(BASIC_AUTH_USERNAME_PROPERTY_KEY), world.getProperty(BASIC_AUTH_PASSWORD_PROPERTY_KEY));
+    }
 }

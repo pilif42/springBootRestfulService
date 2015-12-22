@@ -10,8 +10,8 @@ Feature: Validating greeting requests
     And the response should contain the field "message" with value "Full authentication is required to access this resource"
     And the response should contain the field "path" with value "/greeting"
 
-  @ignore
   Scenario: Get request to a given name with authentication
+    Given valid basic authentication credentials are provided
     When I make the GET call to the greeting controller with name "Joe"
     Then the response status should be 200
     And the response should contain the field "id" with an integer value
@@ -28,9 +28,9 @@ Feature: Validating greeting requests
     And the response should contain the field "message" with value "Full authentication is required to access this resource"
     And the response should contain the field "path" with value "/greeting"
 
-  @ignore
   Scenario: Validate a invalid GPlay receipt with authentication
     Given an invalid JSON Google receipt
+    Given valid basic authentication credentials are provided
     When I post the receipt to the Greeting endpoint
     Then the response status should be 500
     And the response should contain the field "error.code" with value "AS-GO-100"
@@ -47,9 +47,9 @@ Feature: Validating greeting requests
     And the response should contain the field "message" with value "Full authentication is required to access this resource"
     And the response should contain the field "path" with value "/greeting"
 
-  @ignore
   Scenario: Validate a valid GPlay receipt with authentication
     Given a valid JSON Google receipt
+    Given valid basic authentication credentials are provided
     When I post the receipt to the Greeting endpoint
     Then the response status should be 200
     And the response should contain the field "product_id" with value "infinite_gas"

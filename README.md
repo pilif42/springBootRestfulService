@@ -39,7 +39,6 @@ step 3  - restart the app and now basic authentication is required on all endpoi
 
 - TODO:
     - Spring Security:
-            - Cucumber tests to be fixed
             - We probably do not want the healthcheck to be under basic auth so look at configuring it per endpoint
             - Other auth option than basic auth
 

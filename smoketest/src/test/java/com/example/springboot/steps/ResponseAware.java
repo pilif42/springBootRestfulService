@@ -2,7 +2,9 @@ package com.example.springboot.steps;
 
 import com.example.springboot.util.World;
 import org.apache.commons.io.IOUtils;
+import org.apache.http.HttpRequest;
 import org.apache.http.auth.AuthenticationException;
+import org.apache.http.auth.UsernamePasswordCredentials;
 import org.apache.http.client.CookieStore;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -10,6 +12,7 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.auth.BasicScheme;
 import org.apache.http.impl.client.BasicCookieStore;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -20,6 +23,9 @@ import java.net.URI;
 public class ResponseAware {
 
     private World world;
+
+    private String basicAuthUsername;
+    private String basicAuthPassword;
 
     private String googleReceipt;
 
@@ -58,6 +64,11 @@ public class ResponseAware {
         invokeGet(world.getEndpoint(url));
     }
 
+    public void enableBasicAuth(String username, String password) {
+        basicAuthUsername = username;
+        basicAuthPassword = password;
+    }
+
     private void invokeGet(final String endpoint) throws IOException, AuthenticationException {
         executeRequest(new HttpGet(URI.create(endpoint)));
     }
@@ -73,6 +84,8 @@ public class ResponseAware {
         CloseableHttpClient client = null;
 
         try {
+            applyBasicAuth(request);
+
             System.out.format("----------------------------- Request ----------------------------\n%s\n----------------------------------------------------------------\n", request.getRequestLine().toString());
             client = HttpClientBuilder.create().setDefaultCookieStore(cookieStore).build();
             response = client.execute(request);
@@ -89,6 +102,19 @@ public class ResponseAware {
             if (client != null) {
                 client.close();
             }
+        }
+    }
+
+    /**
+     * If basic authentication credentials have been provided for this invocation then apply them to the request by
+     * adding an appropriate header.
+     *
+     * @param request
+     */
+    private void applyBasicAuth(final HttpRequest request) throws AuthenticationException {
+        if (basicAuthUsername != null) {
+            final UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(basicAuthUsername, basicAuthPassword);
+            request.addHeader(new BasicScheme().authenticate(credentials, request, null));
         }
     }
 }
