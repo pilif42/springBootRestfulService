@@ -21,7 +21,9 @@ public class CustomerController {
     public Customer findCustomer(@RequestParam(value="id") String id) throws OurException
     {
         // TODO Validate params
-        log.debug("debug: entering customer with id = {}", id);
+
+        // Uncomment the below when compile ok on Mo's
+        //log.debug("debug: entering customer with id = {}", id);
 
         Customer result = null;
         if (id != null) {
