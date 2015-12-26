@@ -6,6 +6,9 @@
 
 
 ## To run
+        - inside IntelliJ:
+                - Run --> Edit Configurations... --> + on Application
+                - Program arguments = --spring.config.location=./tmp/application.properties
         - from C:\aaaProjects\perso\springTutorials\restfulWebService\api
                 - java -jar build/libs/springbootexample-1.0.0.jar
                 - java -jar build/libs/springbootexample-1.0.0.jar --spring.config.location=file:./tmp/
