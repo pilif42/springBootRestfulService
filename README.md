@@ -1,11 +1,11 @@
-## To build
+## To build:
         - gradlew clean build
         - Note that the 1st time around after the refactoring and the addition of directories (smokeytests, etc.), I had to do first:
                 - gradle wrapper
                 - on Mo's laptop, it is then ./gradlew clean build
 
 
-## To run
+## To run:
         - inside IntelliJ:
                 - Run --> Edit Configurations... --> + on Application
                 - Program arguments = --spring.config.location=./tmp/application.properties
