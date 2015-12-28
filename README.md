@@ -50,14 +50,18 @@ step 2 - add in GreetingController @Secured(SecurityConfiguration.INBOUND_SECURE
 step 3  - restart the app and now basic authentication is required on POST to /greeting.
 
 
+## Spring Cloud server
+step 1 - create a github repo at git@github.com:pilif42/springCloudConfiguration.git
+
+
 - TODO:
+    - Spring Cloud server:
+            - To run your own server, use the spring-cloud-config-server dependency and @EnableConfigServer.
+            - If you set spring.config.name=configserver, the app will run on port 8888 and serve data from a sample repository. You need a spring.cloud.config.server.git.uri to locate the configuration data for your own needs (by default it is the location of a git repository, and can be a local file:.. URL)
+
+
     - Spring Security:
             - Implement auth different from basic auth
-
-    - Spring Cloud server:
-            - configure one.
-            - add our props in there and encrypt the relevant ones
-            - pull props from there
 
     - add Spring JPA:
            - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
