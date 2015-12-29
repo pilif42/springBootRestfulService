@@ -53,7 +53,22 @@ step 3  - restart the app and now basic authentication is required on POST to /g
 ## Spring Cloud server
 step 1 - create a github repo at git@github.com:pilif42/springCloudConfiguration.git
 
+step 2 - installed Spring Boot CLI and the Spring Cloud plugin
+            - downloaded spring-boot-cli-1.3.1.RELEASE-bin.zip
+            - set up environment variable SPRING_HOME
+            - open a Command Prompt and spring --version gives Spring CLI v1.3.1.RELEASE
+            - spring install org.springframework.cloud:spring-cloud-cli:1.1.0.BUILD-SNAPSHOT
 
+step 3 - encrypted the value of inbound.secured.endpoints.password
+            - Downloaded from Oracle the Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 8
+            - Copied local_policy.jar and US_export_policy.jar into C:\Program Files\Java\jdk1.8.0_31\jre\lib\security
+            - spring encrypt inboundpassword --key @C:\Users\PBrossier\.ssh\mobileBackEnd.pem
+                    AQBMhGXzlfEHcaumM/TwF0G9QCKuNGXl4eQ7ibqODNRHjrr1fkYT3KrBmqRFBbv8LC6W0zYI1fguYb2e
+                    ytBWCuERrA74n0lb621lz/PeClzk9yhjnwxKFGKM5YpOumo6WjuyDygkcNic8gIo1WyGE1lBuGqwzaW1
+                    r92zO9mLSlvOeDgTHWVZluQbjcwbuMdhk7EOVcz7aYams1Z22vMyS/0/E9K+8ijYz/vcmWB//rhGfki3
+                    9jva+aRZBV8SWf3aGLmTOHYqZjsfB6g2tLh3Ruuqh1NJePUQTSSxITnTH+/d1JFNT7GBp/wFjhLslmdV
+                    I0cAiK8uMjRhxTFshj3MRWk+0vqqj6I2ZdJtGE5hgkleye2j0ZEzBLBiGrae2qpFN8M=
+                    
 - TODO:
     - Spring Cloud server:
             - To run your own server, use the spring-cloud-config-server dependency and @EnableConfigServer.
