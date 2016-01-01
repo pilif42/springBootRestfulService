@@ -70,23 +70,12 @@ step 2 - encrypt the value of inbound.secured.endpoints.password
             - amended application.properties at git@github.com:pilif42/springCloudConfiguration.git
 
 step 3 - set up a standalone Spring Cloud Config Server
-            - git clone git@github.com:spring-cloud/spring-cloud-config.git
-            - git bash to perso/springTutorials/spring-cloud-config/spring-cloud-config-server (master)
-            - mvn clean
-            - TODO mvn spring-boot:run fails with: [ERROR] [ERROR] Failed to execute goal org.codehaus.mojo:exec-maven-plugin:1.3.2:exec (i
-                                                           mports) on project spring-cloud-config-server: Command execution failed. Cannot
-                                                           run program "egrep" (in directory "c:\aaaProjects\perso\springTutorials\spring-c
-                                                           loud-config\spring-cloud-config-server"): CreateProcess error=2, The system cann
-                                                           ot find the file specified -> [Help 1]
-                                                           [ERROR]
-                                                           [ERROR] To see the full stack trace of the errors, re-run Maven with the -e swit
+            - see https://github.com/pilif42/springCloudConfigServer
+
 
 - TODO:
     - Spring Cloud Config Server:
-            - set up a standalone one: recommended compared to embedding it with @EnableConfigServer.
-                    - shall we clone https://github.com/spring-cloud/spring-cloud-config/tree/master/spring-cloud-config-server?
-            - If you set spring.config.name=configserver, the app will run on port 8888 and serve data from a sample repository. You need a spring.cloud.config.server.git.uri to locate the configuration data for your own needs (by default it is the location of a git repository, and can be a local file:.. URL)
-
+            - read my props from the server.
 
     - Spring Security:
             - Implement auth different from basic auth
