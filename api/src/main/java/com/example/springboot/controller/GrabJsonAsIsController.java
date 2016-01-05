@@ -1,8 +1,10 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.error.OurException;
+import com.example.springboot.service.ElasticSearchService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -19,6 +21,9 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Slf4j
 public class GrabJsonAsIsController {
 
+    @Autowired
+    private ElasticSearchService elasticSearchService;
+
     @ResponseBody
     @RequestMapping(value = "/takejsonin", method = POST, consumes = "application/json")
     public ResponseEntity<?> takeJsonIn(@RequestHeader(value = "X-An-Id", required = false) String userId, HttpServletRequest request) {
@@ -27,6 +32,9 @@ public class GrabJsonAsIsController {
         try {
             String jsonBody = IOUtils.toString(request.getInputStream());
             log.debug("jsonBody received is {}", jsonBody);
+
+            elasticSearchService.storeSomeJsonDocument(userId, jsonBody);
+
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (IOException e) {
             log.error("Failed to parse incoming request: " + e.getMessage(), e);
