@@ -59,23 +59,29 @@ step 2 - encrypt the value of inbound.secured.endpoints.password
                         - set up environment variable SPRING_HOME
                         - open a Command Prompt and spring --version gives Spring CLI v1.3.1.RELEASE
                         - spring install org.springframework.cloud:spring-cloud-cli:1.1.0.BUILD-SNAPSHOT
-            - Downloaded from Oracle the Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 8
+            - downloaded from Oracle the Java Cryptography Extension (JCE) Unlimited Strength Jurisdiction Policy Files 8
                         - Copied local_policy.jar and US_export_policy.jar into C:\Program Files\Java\jdk1.8.0_31\jre\lib\security
-            - spring encrypt inboundpassword --key @C:\Users\PBrossier\.ssh\mobileBackEnd.pem
-                    AQBMhGXzlfEHcaumM/TwF0G9QCKuNGXl4eQ7ibqODNRHjrr1fkYT3KrBmqRFBbv8LC6W0zYI1fguYb2e
-                    ytBWCuERrA74n0lb621lz/PeClzk9yhjnwxKFGKM5YpOumo6WjuyDygkcNic8gIo1WyGE1lBuGqwzaW1
-                    r92zO9mLSlvOeDgTHWVZluQbjcwbuMdhk7EOVcz7aYams1Z22vMyS/0/E9K+8ijYz/vcmWB//rhGfki3
-                    9jva+aRZBV8SWf3aGLmTOHYqZjsfB6g2tLh3Ruuqh1NJePUQTSSxITnTH+/d1JFNT7GBp/wFjhLslmdV
-                    I0cAiK8uMjRhxTFshj3MRWk+0vqqj6I2ZdJtGE5hgkleye2j0ZEzBLBiGrae2qpFN8M=
-            - amended application.properties at git@github.com:pilif42/springCloudConfiguration.git
+            - set up with symmetric key:
+                    - spring encrypt inboundpassword --key maclestephanoise
+                    - result = 17c8a295f053a849d5f1d679756762bbcb826f804c8661d81c7c3f6e5fe425b4
+                    - amend application.properties at git@github.com:pilif42/springCloudConfiguration.git
+            - TODO set up with asymmetric key:
+                    - spring encrypt inboundpassword --key @C:\Users\PBrossier\.ssh\mobileBackEnd.pem
+                                        AQBMhGXzlfEHcaumM/TwF0G9QCKuNGXl4eQ7ibqODNRHjrr1fkYT3KrBmqRFBbv8LC6W0zYI1fguYb2e
+                                        ytBWCuERrA74n0lb621lz/PeClzk9yhjnwxKFGKM5YpOumo6WjuyDygkcNic8gIo1WyGE1lBuGqwzaW1
+                                        r92zO9mLSlvOeDgTHWVZluQbjcwbuMdhk7EOVcz7aYams1Z22vMyS/0/E9K+8ijYz/vcmWB//rhGfki3
+                                        9jva+aRZBV8SWf3aGLmTOHYqZjsfB6g2tLh3Ruuqh1NJePUQTSSxITnTH+/d1JFNT7GBp/wFjhLslmdV
+                                        I0cAiK8uMjRhxTFshj3MRWk+0vqqj6I2ZdJtGE5hgkleye2j0ZEzBLBiGrae2qpFN8M=
 
 step 3 - set up a standalone Spring Cloud Config Server
             - see https://github.com/pilif42/springCloudConfigServer
 
+step 4 - read props from the Spring Cloud Config Server
+            - before: program arguments = --spring.config.location=./tmp/application.properties
+            - after: program arguments = --spring.cloud.config.uri=http://localhost:8888 --spring.cloud.config.failfast=true --spring.application.name=restfulwebservice --spring.profiles.active=local --spring.cloud.config.label=master --spring.cloud.config.username=user --spring.cloud.config.password=thepassw0rd
 
 - TODO:
-    - Spring Cloud Config Server:
-            - read my props from the server.
+    - why props not read from my config server.
 
     - Spring Security:
             - Implement auth different from basic auth
