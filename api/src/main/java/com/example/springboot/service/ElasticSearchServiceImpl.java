@@ -53,7 +53,7 @@ public class ElasticSearchServiceImpl implements ElasticSearchService {
         GetResponse response = client.prepareGet("osmaps", "user", userId).get();
         UserPreferencesResponse result = new UserPreferencesResponse();
         result.setVersion(response.getVersion());
-        result.setSource(response.getSourceAsString());
+        result.setSource(response.getSource());
         return result;
     }
 

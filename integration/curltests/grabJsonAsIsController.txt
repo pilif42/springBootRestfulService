@@ -5,4 +5,4 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -H "X-An-
 
 ## Retrieve a document from Elasticsearch
 curl -H "Accept: application/json" -H "X-An-Id:9c160368-9326-50c7-d894-c2f3b37d03a6" http://localhost:8089/takejsonin -v -X GET
-200 {"version":4,"source":"{\"show_distance_in\":\"metric\",\"initial_mapview\":\"gb\",\"anotherprop\":\"thevalue\"}"}
+200 {"version":4,"source":{"initial_mapview":"gb","anotherprop":"thevalue","show_distance_in":"metric"}}
