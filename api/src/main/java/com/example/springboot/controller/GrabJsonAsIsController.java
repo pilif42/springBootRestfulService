@@ -1,5 +1,6 @@
 package com.example.springboot.controller;
 
+import com.example.springboot.domain.UserPreferencesResponse;
 import com.example.springboot.error.OurException;
 import com.example.springboot.service.ElasticSearchService;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
+import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
@@ -40,5 +42,12 @@ public class GrabJsonAsIsController {
             log.error("Failed to parse incoming request: " + e.getMessage(), e);
             throw new OurException(OurException.Fault.ERROR_PARSING_RECEIPT_REQUEST);
         }
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/takejsonin", method = GET, produces = "application/json")
+    public UserPreferencesResponse getUserPreferences(@RequestHeader(value = "X-An-Id", required = false) String userId) {
+        log.debug("Retrieving user preferences with userId = {}", userId);
+        return elasticSearchService.getPreferences(userId);
     }
 }
