@@ -66,12 +66,7 @@ step 2 - encrypt the value of inbound.secured.endpoints.password
                     - result = 17c8a295f053a849d5f1d679756762bbcb826f804c8661d81c7c3f6e5fe425b4
                     - amend application.properties at git@github.com:pilif42/springCloudConfiguration.git
             - TODO set up with asymmetric key:
-                    - spring encrypt inboundpassword --key @C:\Users\PBrossier\.ssh\mobileBackEnd.pem
-                                        AQBMhGXzlfEHcaumM/TwF0G9QCKuNGXl4eQ7ibqODNRHjrr1fkYT3KrBmqRFBbv8LC6W0zYI1fguYb2e
-                                        ytBWCuERrA74n0lb621lz/PeClzk9yhjnwxKFGKM5YpOumo6WjuyDygkcNic8gIo1WyGE1lBuGqwzaW1
-                                        r92zO9mLSlvOeDgTHWVZluQbjcwbuMdhk7EOVcz7aYams1Z22vMyS/0/E9K+8ijYz/vcmWB//rhGfki3
-                                        9jva+aRZBV8SWf3aGLmTOHYqZjsfB6g2tLh3Ruuqh1NJePUQTSSxITnTH+/d1JFNT7GBp/wFjhLslmdV
-                                        I0cAiK8uMjRhxTFshj3MRWk+0vqqj6I2ZdJtGE5hgkleye2j0ZEzBLBiGrae2qpFN8M=
+                    - see issue in README of https://github.com/pilif42/springCloudConfigServer
 
 step 3 - set up a standalone Spring Cloud Config Server
             - see https://github.com/pilif42/springCloudConfigServer
@@ -82,15 +77,15 @@ step 4 - read props from the Spring Cloud Config Server
             - after: program arguments = --spring.cloud.config.uri=http://localhost:8888 --spring.cloud.config.failfast=true --spring.application.name=restfulwebservice --spring.profiles.active=local --spring.cloud.config.label=master --spring.cloud.config.username=user --spring.cloud.config.password=thepassw0rd
 
 - TODO:
-    - Spring Security:
-            - Implement auth different from basic auth
-
-    - add Spring JPA:
-           - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
-           - replace findById with findOne in CustomerRepository
-
     - add Flyway
 
+    - add Spring JPA:
+               - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
+               - replace findById with findOne in CustomerRepository
+
+    - Spring Security:
+            - Implement auth different from basic auth
+            
     - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
 
     - hook up with hbase: http://hbase.apache.org/
