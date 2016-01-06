@@ -77,12 +77,11 @@ step 3 - set up a standalone Spring Cloud Config Server
             - see https://github.com/pilif42/springCloudConfigServer
 
 step 4 - read props from the Spring Cloud Config Server
+            - add dependency on artifactId spring-cloud-config-client
             - before: program arguments = --spring.config.location=./tmp/application.properties
             - after: program arguments = --spring.cloud.config.uri=http://localhost:8888 --spring.cloud.config.failfast=true --spring.application.name=restfulwebservice --spring.profiles.active=local --spring.cloud.config.label=master --spring.cloud.config.username=user --spring.cloud.config.password=thepassw0rd
 
 - TODO:
-    - why props not read from my config server.
-
     - Spring Security:
             - Implement auth different from basic auth
 
