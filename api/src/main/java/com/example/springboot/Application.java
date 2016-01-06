@@ -9,7 +9,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan
 @SpringBootApplication
 @EnableTransactionManagement
-@PropertySource("classpath:application.properties")
+// Only use the below if you want to rely on application.properties under resources
+//@PropertySource("classpath:application.properties")
 public class Application {
 
     public static void main(String[] args) {
