@@ -85,7 +85,7 @@ step 4 - read props from the Spring Cloud Config Server
 
     - Spring Security:
             - Implement auth different from basic auth
-            
+
     - hook up with hadoop: https://spring.io/guides/gs/yarn-basic/
 
     - hook up with hbase: http://hbase.apache.org/
