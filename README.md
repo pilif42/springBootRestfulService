@@ -14,7 +14,7 @@
                 - java -jar build/libs/springbootexample-1.0.0.jar --spring.config.location=file:./tmp/
 
 
-## Database
+## Database (ATTENTION - See below Flyway addition that is now in use)
 step 1 - create a user with the following from the command line:
     createuser -U postgres -P teststore
     -- When requested the password is `teststore`
@@ -75,6 +75,31 @@ step 4 - read props from the Spring Cloud Config Server
             - add dependency on artifactId spring-cloud-config-client
             - before: program arguments = --spring.config.location=./tmp/application.properties
             - after: program arguments = --spring.cloud.config.uri=http://localhost:8888 --spring.cloud.config.failfast=true --spring.application.name=restfulwebservice --spring.profiles.active=local --spring.cloud.config.label=master --spring.cloud.config.username=user --spring.cloud.config.password=thepassw0rd
+
+
+## Flyway addition
+step 1 - add dependency
+            - compile("org.flywaydb:flyway-core")
+
+step 2 - define Flyway props
+            - see application.properties under /tmp
+            - comment out datasource.url, datasource.username, datasource.password
+            - see 'Start of section added for Flyway'
+
+step 3 - define a DataSource correctly
+            - neutralise DataConfiguration, ie comment out all
+
+step 4 - prerequisite work on database (this step will have to be repeated if Flyway gets in a mess, ie someone edits a flyway migration file after it has been applied to the database. The simplest solution in DEV is to wipe out the database, etc. and start from scratch with the below.)
+            - All progs > Postgres > SQL Shell
+            - Execute all in preinstall.1.0.0.0.sql
+
+step 5 - create migration scripts
+            - add directory /db/migration under resources
+            - add files following naming conventions
+
+step 6 - start the app and verify Flyway scripts are applied correctly
+
+
 
 - TODO:
     - add Flyway

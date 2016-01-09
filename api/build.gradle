@@ -99,6 +99,7 @@ dependencies {
     compile "org.projectlombok:lombok:1.16.6"
     compile "commons-io:commons-io:2.4"
     compile "org.elasticsearch:elasticsearch:2.1.1"
+    compile("org.flywaydb:flyway-core")
 
     testCompile("org.springframework:spring-test")
     testCompile("org.springframework.boot:spring-boot-starter-test")
