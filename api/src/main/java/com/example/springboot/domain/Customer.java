@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CUSTOMER", schema = "teststore")
+@Table(name = "CUSTOMER", schema = "testschema")
 @JsonIgnoreProperties(ignoreUnknown=true)
 @Data
 public class Customer {

@@ -13,6 +13,6 @@ public class JdbcHealthDAO implements HealthDAO {
 
     @Override
     public void checkDB() {
-        jdbcTemplate.queryForObject("select count(*) from teststore.CUSTOMER", Long.class);
+        jdbcTemplate.queryForObject("select count(*) from testschema.CUSTOMER", Long.class);
     }
 }
