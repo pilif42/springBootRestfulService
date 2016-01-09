@@ -102,11 +102,8 @@ step 6 - start the app and verify Flyway scripts are applied correctly
 
 
 - TODO:
-    - add Flyway
-
-    - add Spring JPA:
-               - add @GeneratedValue(strategy=GenerationType.AUTO) to id on Customer
-               - replace findById with findOne in CustomerRepository
+    - add customer insertion:
+            - make id a long instead of String on Customer
 
     - Spring Security:
             - Implement auth different from basic auth

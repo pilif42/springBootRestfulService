@@ -5,7 +5,10 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +19,8 @@ public class Customer {
 
     @Id
     @Column(name = "ID")
+    @GeneratedValue(strategy= GenerationType.AUTO, generator="my_customerid_seq_gen")
+    @SequenceGenerator(name="my_customerid_seq_gen", sequenceName="testschema.CUSTOMERID_SEQ_GEN")
     private String id;
     @Column(name = "FIRSTNAME")
     private String firstName;

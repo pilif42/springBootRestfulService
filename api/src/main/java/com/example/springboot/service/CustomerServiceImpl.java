@@ -22,4 +22,10 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Customer> findByLastName(String customerLastName) {
         return customerRepository.findByLastName(customerLastName);
     }
+
+    @Override
+    public String save(Customer aCustomer) {
+        Customer savedCustomer = customerRepository.save(aCustomer);
+        return savedCustomer.getId();
+    }
 }

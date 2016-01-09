@@ -12,12 +12,13 @@ import java.io.IOException;
 public class OurException extends RuntimeException {
 
     public static enum Fault {
+        BAD_REQUEST(HttpStatus.BAD_REQUEST, "OS-102", "Invalid Request"),
         CUSTOMER_NOT_FOUND(HttpStatus.NOT_FOUND, "UA-GP-102", "Customer details not found"),
         DATA_SIGNATURE_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to find field 'data_signature'"),
-        PURCHASE_DATA_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to find field for 'purchase_data'"),
+        ERROR_PARSING_JSON_REQUEST(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Failed to parse json request"),
         ERROR_PARSING_PURCHASE_DATA(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to parse field 'purchase_data'"),
         ERROR_PARSING_RECEIPT_REQUEST(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Failed to parse receipt request"),
-        ERROR_PARSING_JSON_REQUEST(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Failed to parse json request");
+        PURCHASE_DATA_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to find field for 'purchase_data'");
 
         private final HttpStatus httpStatus;
         private final String message;

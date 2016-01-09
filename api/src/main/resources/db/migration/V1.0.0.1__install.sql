@@ -35,8 +35,17 @@ COMMENT ON TABLE testschema.ENTITY IS 'Core entity type to be inherited only.';
 -- ------------------------------------------------------------------------------------------------------------
 -- Customer
 -- ------------------------------------------------------------------------------------------------------------
+CREATE SEQUENCE CUSTOMERID_SEQ_GEN
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 99999999
+  START 1
+  CACHE 10;
+
+GRANT ALL ON ALL SEQUENCES IN SCHEMA testschema TO testuser;
+
 CREATE TABLE testschema.CUSTOMER (
-    ID VARCHAR(50) NOT NULL PRIMARY KEY,
+    ID VARCHAR(50) NOT NULL PRIMARY KEY DEFAULT nextval('testschema.CUSTOMERID_SEQ_GEN'),
     FIRSTNAME VARCHAR(50) NOT NULL,
     LASTNAME VARCHAR(50) NOT NULL
 )

@@ -1,2 +1,8 @@
+# Retrieve an existing customer
 curl http://localhost:8089/customer?id=2 -v -X GET
 200 {"id":"2","firstName":"John","lastName":"Doe"}
+
+
+## Insert a new customer
+curl -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:8089/customer -v -X POST -d "{\"firstName\":\"Lionel\",\"lastName\":\"Messi\"}"
+

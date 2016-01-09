@@ -7,4 +7,5 @@ import java.util.List;
 public interface CustomerService {
     Customer findById(String customerId);
     List<Customer> findByLastName(String customerLastName);
+    String save(Customer aCustomer);
 }
