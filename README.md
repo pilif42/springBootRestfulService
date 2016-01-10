@@ -106,6 +106,8 @@ step 6 - start the app and verify Flyway scripts are applied correctly
 
     - retrieve a customer: hide some fields
 
+    - extend Customer and store in db
+
     - Spring Security:
             - Implement auth different from basic auth
 
