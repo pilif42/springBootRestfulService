@@ -1,6 +1,7 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.domain.Customer;
+import com.example.springboot.error.OurException;
 import com.example.springboot.service.CustomerService;
 import com.example.springboot.utility.TestConstants;
 import org.junit.Before;
@@ -8,6 +9,7 @@ import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -24,6 +26,8 @@ import static com.example.springboot.utility.CustomerBuilder.customer;
 import static com.example.springboot.utility.MockMvcControllerAdviceHelper.mockAdviceFor;
 
 import static com.example.springboot.utility.MvcHelper.getJson;
+import static com.example.springboot.utility.MvcHelper.postJson;
+import static com.example.springboot.utility.JsonObjectMapperUtils.jsonMapper;
 
 public class CustomerControllerTests {
 
@@ -62,6 +66,41 @@ public class CustomerControllerTests {
         actions.andExpect(jsonPath("$.id", is(TestConstants.CUSTOMER_ID_1)));
         actions.andExpect(jsonPath("$.firstName", is(testFirstName)));
         actions.andExpect(jsonPath("$.lastName", is(testLastName)));
+    }
+
+    @Test
+    public void storeCustomer() throws Exception {
+        Customer customer = createCustomer();
+
+        when(customerService.save(customer)).thenReturn(1);
+
+        ResultActions actions = mockMvc.perform(
+            postJson("/customer", jsonMapper.writeValueAsString(customer))
+            .contentType(MediaType.APPLICATION_JSON)
+            .accept(MediaType.APPLICATION_JSON));
+
+        actions.andExpect(status().is2xxSuccessful());
+    }
+
+    @Test
+    public void storeCustomerExceptionThrownWhilePersisting() throws Exception {
+        Customer customer = createCustomer();
+
+        when(customerService.save(customer)).thenThrow(new OurException(OurException.Fault.GENERIC_SERVER_SIDE_ERROR));
+
+        ResultActions actions = mockMvc.perform(
+            postJson("/customer", jsonMapper.writeValueAsString(customer))
+                .contentType(MediaType.APPLICATION_JSON)
+                .accept(MediaType.APPLICATION_JSON));
+
+        actions.andExpect(status().is5xxServerError());
+    }
+
+    private Customer createCustomer() {
+        final Customer customer = new Customer();
+        customer.setFirstName("Test");
+        customer.setLastName("User");
+        return customer;
     }
 
 }
