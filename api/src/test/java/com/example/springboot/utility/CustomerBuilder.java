@@ -4,13 +4,13 @@ import com.example.springboot.domain.Customer;
 
 public class CustomerBuilder {
 
-    private String id;
+    private Integer id;
     private String firstName;
     private String lastName;
 
     private CustomerBuilder(){}
 
-    public CustomerBuilder id(String id) {
+    public CustomerBuilder id(Integer id) {
         this.id = id;
         return this;
     }

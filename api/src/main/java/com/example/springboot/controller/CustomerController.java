@@ -26,7 +26,7 @@ public class CustomerController {
     private CustomerService customerService;
 
     @RequestMapping(value="/customer", method= RequestMethod.GET)
-    public Customer findCustomer(@RequestParam(value="id") String id) throws OurException
+    public Customer findCustomer(@RequestParam(value="id") Integer id) throws OurException
     {
         // TODO Validate params
 
@@ -52,7 +52,7 @@ public class CustomerController {
             throw new InvalidRequestException("Binding errors for customer creation: ", bindingResult);
         }
 
-        String customerId = customerService.save(customer);
+        Integer customerId = customerService.save(customer);
         log.debug("Just created customer with id {}", customerId);
 
         return new ResponseEntity<>(HttpStatus.CREATED);

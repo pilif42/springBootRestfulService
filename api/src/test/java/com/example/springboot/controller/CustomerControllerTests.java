@@ -54,7 +54,7 @@ public class CustomerControllerTests {
         ourMockCustomersList.add(ourMockCustomer);
         when(customerService.findByLastName(testLastName)).thenReturn(ourMockCustomersList);
 
-        ResultActions actions = mockMvc.perform(getJson("/customer").param("id", TestConstants.CUSTOMER_ID_1).param("lastName", testLastName));
+        ResultActions actions = mockMvc.perform(getJson("/customer").param("id", TestConstants.CUSTOMER_ID_1.toString()).param("lastName", testLastName));
 
         actions.andExpect(status().isOk());
         actions.andExpect(handler().handlerType(CustomerController.class));

@@ -21,7 +21,7 @@ public class Customer {
     @Column(name = "ID")
     @GeneratedValue(strategy= GenerationType.AUTO, generator="my_customerid_seq_gen")
     @SequenceGenerator(name="my_customerid_seq_gen", sequenceName="testschema.CUSTOMERID_SEQ_GEN")
-    private String id;
+    private Integer id;
     @Column(name = "FIRSTNAME")
     private String firstName;
     @Column(name = "LASTNAME")
@@ -30,7 +30,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String id, String firstName, String lastName) {
+    public Customer(Integer id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -5,7 +5,7 @@ import com.example.springboot.domain.Customer;
 import java.util.List;
 
 public interface CustomerService {
-    Customer findById(String customerId);
+    Customer findById(int customerId);
     List<Customer> findByLastName(String customerLastName);
-    String save(Customer aCustomer);
+    int save(Customer aCustomer);
 }
