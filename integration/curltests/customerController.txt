@@ -1,8 +1,8 @@
 # Retrieve an existing customer
 curl http://localhost:8089/customer?id=2 -v -X GET
-200 {"id":"2","firstName":"John","lastName":"Doe"}
+200 {"id":2,"version":1,"created":1452438934179,"modified":1452438934179,"firstName":"John","lastName":"Doe","createdBy":"9d13f7e0-0c6d-7c4b-6327-ffde84545db0","modifiedBy":"9d13f7e0-0c6d-7c4b-6327-ffde84545db0"}
 
 
 ## Insert a new customer
 curl -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:8089/customer -v -X POST -d "{\"firstName\":\"Lionel\",\"lastName\":\"Messi\"}"
-
+201

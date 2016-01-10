@@ -22,24 +22,28 @@ public class Customer {
     @GeneratedValue(strategy= GenerationType.AUTO, generator="my_customerid_seq_gen")
     @SequenceGenerator(name="my_customerid_seq_gen", sequenceName="testschema.CUSTOMERID_SEQ_GEN")
     private Integer id;
+
+    @Column(name = "VERSION")
+    private Integer version;
+
+    @Column(name = "CREATED")
+    private Long created;
+    @Column(name = "MODIFIED")
+    private Long modified;
+
     @Column(name = "FIRSTNAME")
     private String firstName;
     @Column(name = "LASTNAME")
     private String lastName;
-
-    public Customer() {
-    }
-
-    public Customer(Integer id, String firstName, String lastName) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+    @Column(name = "CREATED_BY")
+    private String createdBy;
+    @Column(name = "MODIFIED_BY")
+    private String modifiedBy;
 
     @Override
     public String toString() {
         return String.format(
-                "Customer[id='%s', firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+                "Customer[id='%s', firstName='%s', lastName='%s', version='%s', createdBy='%s']",
+                id, firstName, lastName, version, createdBy);
     }
 }

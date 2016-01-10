@@ -102,8 +102,9 @@ step 6 - start the app and verify Flyway scripts are applied correctly
 
 
 - TODO:
-    - add customer insertion:
-            - make id a long instead of String on Customer
+    - add customer insertion: Unit & Cucumber tests to write
+
+    - retrieve a customer: hide some fields
 
     - Spring Security:
             - Implement auth different from basic auth
