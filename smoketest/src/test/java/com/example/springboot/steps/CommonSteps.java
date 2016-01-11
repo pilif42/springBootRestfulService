@@ -14,6 +14,7 @@ public class CommonSteps {
 
     private static final String BASIC_AUTH_USERNAME_PROPERTY_KEY = "cuc.basic.auth.username";
     private static final String BASIC_AUTH_PASSWORD_PROPERTY_KEY = "cuc.basic.auth.password";
+    private static final String VALID_X_AN_ID_PROPERTY_KEY = "cuc.valid.xanid";
 
     private final ResponseAware responseAware;
     private final World world;
@@ -76,5 +77,10 @@ public class CommonSteps {
     @Given("^the JSON parameter \"(.*?)\" with value \"(.*?)\"$")
     public void the_JSON_parameter_with_value(String arg1, String arg2) throws Throwable {
         responseAware.addRequestProperty(arg1, arg2);
+    }
+
+    @Given("^A valid x-an-id$")
+    public void a_valid_x_an_id() throws Throwable {
+        responseAware.setXAndId(world.getProperty(VALID_X_AN_ID_PROPERTY_KEY));
     }
 }

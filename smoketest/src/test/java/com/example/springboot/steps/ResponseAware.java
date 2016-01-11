@@ -30,6 +30,9 @@ public class ResponseAware {
     // For building requests
     Properties properties = new Properties();
 
+    // If present will be munged into request headers for all requests
+    private String xAnId;
+
     private String basicAuthUsername;
     private String basicAuthPassword;
 
@@ -43,6 +46,8 @@ public class ResponseAware {
     public ResponseAware(final World world) {
         this.world = world;
     }
+
+    public void setXAndId(final String xAnId) { this.xAnId = xAnId; }
 
     public void setGoogleReceipt(final String googleReceipt) {
         this.googleReceipt = googleReceipt;
@@ -75,6 +80,11 @@ public class ResponseAware {
         invokeGet(world.getEndpoint(url));
     }
 
+    public void invokeGrabJsonAsIsEndpointWithId() throws IOException, AuthenticationException {
+        final String url = String.format("/takejsonin");
+        invokeGet(world.getEndpoint(url));
+    }
+
     public void enableBasicAuth(String username, String password) {
         basicAuthUsername = username;
         basicAuthPassword = password;
@@ -86,6 +96,10 @@ public class ResponseAware {
 
     public void invokePostCustomerEndpoint() throws IOException, AuthenticationException {
         invokeJsonPost(world.getEndpoint("/customer"));
+    }
+
+    public void invokePostGrabJsonAsIsEndpoint() throws IOException, AuthenticationException {
+        invokeJsonPost(world.getEndpoint("/takejsonin"));
     }
 
     protected StringEntity propertiesToJsonEntity(final Properties properties) throws JsonProcessingException {
@@ -116,6 +130,7 @@ public class ResponseAware {
 
         try {
             applyBasicAuth(request);
+            addRequestHeaders(request);
 
             System.out.format("----------------------------- Request ----------------------------\n%s\n----------------------------------------------------------------\n", request.getRequestLine().toString());
             client = HttpClientBuilder.create().setDefaultCookieStore(cookieStore).build();
@@ -146,6 +161,12 @@ public class ResponseAware {
         if (basicAuthUsername != null) {
             final UsernamePasswordCredentials credentials = new UsernamePasswordCredentials(basicAuthUsername, basicAuthPassword);
             request.addHeader(new BasicScheme().authenticate(credentials, request, null));
+        }
+    }
+
+    private void addRequestHeaders(final HttpRequest request) {
+        if(xAnId != null) {
+            request.addHeader("X-An-Id", xAnId);
         }
     }
 }

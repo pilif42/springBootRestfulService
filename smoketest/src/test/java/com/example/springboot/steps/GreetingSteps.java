@@ -19,11 +19,6 @@ public class GreetingSteps {
         responseAware.invokeGreetingEndpointWithName(name);
     }
 
-    @When("^I make the GET call to the customer controller with id ([^\"]*)$")
-    public void i_make_the_GET_call_to_the_customer_controller_with_id(int id) throws Throwable {
-        responseAware.invokeCustomerEndpointWithId(id);
-    }
-
     @Given("^an invalid JSON Google receipt$")
     public void an_invalid_json_Google_receipt() throws Throwable {
         responseAware.setGoogleReceipt(world.getProperty("cuc.invalid.sub.google.receipt"));

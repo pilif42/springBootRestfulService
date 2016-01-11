@@ -9,7 +9,6 @@ Feature: Validating customer requests
     And the response should contain the field "createdBy" with value "9d13f7e0-0c6d-7c4b-6327-ffde84545db0"
     And the response should contain the field "modifiedBy" with value "9d13f7e0-0c6d-7c4b-6327-ffde84545db0"
     And the response should contain the field "created" with a long value
-    And the response should contain the field "modified" with a long value
 
   Scenario: Store a new customer
     Given the JSON parameter "firstName" with value "Lionel"

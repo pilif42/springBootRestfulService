@@ -102,8 +102,6 @@ step 6 - start the app and verify Flyway scripts are applied correctly
 
 
 - TODO:
-    - add customer insertion: Cucumber tests to write
-
     - add headers to ResponseAware: see the one in userapi-fnt (registeredApplicationId)
 
     - retrieve a customer: hide some fields
