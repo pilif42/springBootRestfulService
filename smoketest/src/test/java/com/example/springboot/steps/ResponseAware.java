@@ -1,6 +1,8 @@
 package com.example.springboot.steps;
 
 import com.example.springboot.util.World;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpRequest;
 import org.apache.http.auth.AuthenticationException;
@@ -19,10 +21,14 @@ import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.IOException;
 import java.net.URI;
+import java.util.Properties;
 
 public class ResponseAware {
 
     private World world;
+
+    // For building requests
+    Properties properties = new Properties();
 
     private String basicAuthUsername;
     private String basicAuthPassword;
@@ -74,6 +80,20 @@ public class ResponseAware {
         basicAuthPassword = password;
     }
 
+    public void addRequestProperty(final String name, final String value) {
+        properties.setProperty(name, value);
+    }
+
+    public void invokePostCustomerEndpoint() throws IOException, AuthenticationException {
+        invokeJsonPost(world.getEndpoint("/customer"));
+    }
+
+    protected StringEntity propertiesToJsonEntity(final Properties properties) throws JsonProcessingException {
+        final ObjectMapper om = new ObjectMapper();
+        StringEntity entity = new StringEntity(om.writeValueAsString(properties), ContentType.APPLICATION_JSON);
+        return entity;
+    }
+
     private void invokeGet(final String endpoint) throws IOException, AuthenticationException {
         executeRequest(new HttpGet(URI.create(endpoint)));
     }
@@ -81,6 +101,12 @@ public class ResponseAware {
     private void invokePost(final String endpoint, String data, ContentType contentType) throws IOException, AuthenticationException {
         final HttpPost post = new HttpPost(URI.create(endpoint));
         post.setEntity(new StringEntity(data, contentType == null ? ContentType.DEFAULT_TEXT : contentType));
+        executeRequest(post);
+    }
+
+    private void invokeJsonPost(final String endpoint) throws IOException, AuthenticationException {
+        final HttpPost post = new HttpPost(URI.create(endpoint));
+        post.setEntity(propertiesToJsonEntity(properties));
         executeRequest(post);
     }
 

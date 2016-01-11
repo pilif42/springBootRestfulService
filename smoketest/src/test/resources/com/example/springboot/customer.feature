@@ -11,3 +11,8 @@ Feature: Validating customer requests
     And the response should contain the field "created" with a long value
     And the response should contain the field "modified" with a long value
 
+  Scenario: Store a new customer
+    Given the JSON parameter "firstName" with value "Lionel"
+    And the JSON parameter "lastName" with value "Messi"
+    When I make the REST call to the POST customer endpoint
+    Then the response status should be 201

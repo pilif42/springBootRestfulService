@@ -72,4 +72,9 @@ public class CommonSteps {
     public void valid_basic_authentication_credentials_are_provided() throws Throwable {
         responseAware.enableBasicAuth(world.getProperty(BASIC_AUTH_USERNAME_PROPERTY_KEY), world.getProperty(BASIC_AUTH_PASSWORD_PROPERTY_KEY));
     }
+
+    @Given("^the JSON parameter \"(.*?)\" with value \"(.*?)\"$")
+    public void the_JSON_parameter_with_value(String arg1, String arg2) throws Throwable {
+        responseAware.addRequestProperty(arg1, arg2);
+    }
 }
