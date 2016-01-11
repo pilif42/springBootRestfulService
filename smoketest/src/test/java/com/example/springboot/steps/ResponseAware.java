@@ -64,6 +64,11 @@ public class ResponseAware {
         invokeGet(world.getEndpoint(url));
     }
 
+    public void invokeCustomerEndpointWithId(int id) throws IOException, AuthenticationException {
+        final String url = String.format("/customer?id=%s", id);
+        invokeGet(world.getEndpoint(url));
+    }
+
     public void enableBasicAuth(String username, String password) {
         basicAuthUsername = username;
         basicAuthPassword = password;

@@ -47,6 +47,15 @@ public class CommonSteps {
         assertTrue(obj instanceof Integer);
     }
 
+    @Then("^the response should contain the field \"([^\"]*)\" with an integer value of ([^\"]*)$")
+    public void the_response_should_contain_the_field_with_integer_value_of(String field, int value) throws Throwable {
+        Object obj = JsonPath.read(responseAware.getBody(), "$." + field);
+        assertTrue(obj instanceof Integer);
+
+        Integer retrievedValue = (Integer)obj;
+        assertEquals(value, retrievedValue.intValue());
+    }
+
     @Then("^the response should contain the field \"([^\"]*)\" with a long value$")
     public void the_response_should_contain_the_field_with_long_value(String field) throws Throwable {
         Object obj = JsonPath.read(responseAware.getBody(), "$." + field);
