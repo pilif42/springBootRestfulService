@@ -88,8 +88,9 @@ public class CustomerControllerTests {
 
         when(customerService.save(customer)).thenThrow(new OurException(OurException.Fault.GENERIC_SERVER_SIDE_ERROR));
 
+        String jsonRequest = jsonMapper.writeValueAsString(customer);
         ResultActions actions = mockMvc.perform(
-            postJson("/customer", jsonMapper.writeValueAsString(customer))
+            postJson("/customer", jsonRequest)
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON));
 
@@ -98,6 +99,10 @@ public class CustomerControllerTests {
 
     private Customer createCustomer() {
         final Customer customer = new Customer();
+        customer.setCreatedBy("theCreator");
+        customer.setCreated(100L);
+        customer.setModifiedBy("theCreator");
+        customer.setModified(100L);
         customer.setFirstName("Test");
         customer.setLastName("User");
         return customer;

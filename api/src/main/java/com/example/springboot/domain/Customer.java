@@ -1,5 +1,6 @@
 package com.example.springboot.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
@@ -43,7 +44,7 @@ public class Customer {
     @Override
     public String toString() {
         return String.format(
-                "Customer[id='%s', firstName='%s', lastName='%s', version='%s', createdBy='%s']",
-                id, firstName, lastName, version, createdBy);
+                "Customer[id='%s', firstName='%s', lastName='%s', version='%s', createdBy='%s', created='%s', modifiedBy='%s', modified='%s']",
+                id, firstName, lastName, version, createdBy, created, modifiedBy, modified);
     }
 }
