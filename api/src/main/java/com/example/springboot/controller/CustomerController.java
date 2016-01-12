@@ -30,7 +30,7 @@ public class CustomerController {
     {
         // TODO Validate params
 
-        log.debug("debug: entering customer with id = {}", id);
+        log.debug("debug: entering find customer with id = {}", id);
 
         Customer result = null;
         if (id != null) {

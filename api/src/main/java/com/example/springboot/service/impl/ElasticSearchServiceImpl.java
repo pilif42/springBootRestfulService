@@ -1,6 +1,7 @@
-package com.example.springboot.service;
+package com.example.springboot.service.impl;
 
 import com.example.springboot.domain.UserPreferencesResponse;
+import com.example.springboot.service.ElasticSearchService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.action.get.GetResponse;

@@ -19,6 +19,7 @@ public class OurException extends RuntimeException {
         ERROR_PARSING_PURCHASE_DATA(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to parse field 'purchase_data'"),
         ERROR_PARSING_RECEIPT_REQUEST(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Failed to parse receipt request"),
         GENERIC_SERVER_SIDE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "OS-016", "Request could not be completed because there is a problem with the service"),
+        PRODUCT_NOT_FOUND(HttpStatus.NOT_FOUND, "UA-GP-102", "Product details not found"),
         PURCHASE_DATA_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "AS-GO-100", "Unable to find field for 'purchase_data'");
 
         private final HttpStatus httpStatus;

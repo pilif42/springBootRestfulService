@@ -110,7 +110,8 @@ Note that the above was taken from 'http://www.davismol.net/2015/03/21/jackson-u
 
 
 - TODO:
-    - store and retrieve Products in the db
+    - store and retrieve Products in the db: http://blog.netgloo.com/2014/12/18/handling-entities-inheritance-with-spring-data-jpa/
+    https://github.com/netgloo/spring-boot-samples/tree/master/spring-boot-springdatajpa-inheritance/src/main/java/netgloo/models
 
     - Spring Security:
             - Implement auth different from basic auth
