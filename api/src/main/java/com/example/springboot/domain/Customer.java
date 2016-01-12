@@ -1,10 +1,10 @@
 package com.example.springboot.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,8 +15,9 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "CUSTOMER", schema = "testschema")
 @JsonIgnoreProperties(ignoreUnknown=true)
+@DiscriminatorColumn(name = "CUSTOMER_TYPE")
 @Data
-public class Customer {
+public abstract class Customer {
 
     @Id
     @Column(name = "ID")
