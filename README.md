@@ -100,12 +100,15 @@ step 5 - create migration scripts
 step 6 - start the app and verify Flyway scripts are applied correctly
 
 
+## Json serialization / deserialization
+If you want to make it asymmetrical, that is to exclude a Java object property only during deserialization (json String to Object), but instead to include its value during serialization (Object to json String), you must use an appropriate combination of @JsonIgnore and @JsonProperty annotations. To be precise, you must:
+    - annotate with @JsonIgnore the property itself
+    - annotate with @JsonIgnore its set method
+    - annotate with @JsonProperty its get method
+Note that the above was taken from 'http://www.davismol.net/2015/03/21/jackson-using-jsonignore-and-jsonproperty-annotations-to-exclude-a-property-only-from-json-deserialization/' and I did not test it.
+
 
 - TODO:
-    - add headers to ResponseAware: see the one in userapi-fnt (registeredApplicationId)
-
-    - retrieve a customer: hide some fields
-
     - extend Customer and store in db
 
     - Spring Security:
