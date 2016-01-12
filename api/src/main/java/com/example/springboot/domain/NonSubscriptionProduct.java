@@ -8,11 +8,12 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue(value = "NONSUBSCRIBER")
+@DiscriminatorValue(value = "NONSUBSCRIPTION")
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class NonSubscriberCustomer extends Customer {
+public class NonSubscriptionProduct extends Product {
 
-    @Column(name = "VOUCHER_CODE")
-    private String voucherCode;
+    @Column(name = "MAP_CODE")
+    private String mapCode;
+
 }

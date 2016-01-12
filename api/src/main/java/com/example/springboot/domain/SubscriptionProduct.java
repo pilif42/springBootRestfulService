@@ -8,10 +8,10 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorValue(value = "SUBSCRIBER")
+@DiscriminatorValue(value = "SUBSCRIPTION")
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class SubscriberCustomer extends Customer {
+public class SubscriptionProduct extends Product {
     @Column(name = "START_DATE")
     private Long startDate;
 

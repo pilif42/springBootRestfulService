@@ -1,7 +1,6 @@
 package com.example.springboot.controller;
 
 import com.example.springboot.domain.Customer;
-import com.example.springboot.domain.NonSubscriberCustomer;
 import com.example.springboot.error.InvalidRequestException;
 import com.example.springboot.error.OurException;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +45,7 @@ public class CustomerController {
 
     @ResponseBody
     @RequestMapping(value="/customer", method= RequestMethod.POST, consumes = "application/json")
-    public ResponseEntity<?> createNonSubscriberCustomer(@RequestBody @Valid NonSubscriberCustomer customer, BindingResult bindingResult) {
+    public ResponseEntity<?> createNonSubscriberCustomer(@RequestBody @Valid Customer customer, BindingResult bindingResult) {
         log.debug("Processing customer creation for customer with firstName '{}'.", customer.getFirstName());
 
         if (bindingResult.hasErrors()) {

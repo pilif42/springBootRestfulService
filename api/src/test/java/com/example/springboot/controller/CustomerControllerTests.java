@@ -52,7 +52,7 @@ public class CustomerControllerTests {
     public void findCustomer() throws Exception {
         String testFirstName = "Ken";
         String testLastName = "Smith";
-        Customer ourMockCustomer = customer().id(TestConstants.CUSTOMER_ID_1).firstName(testFirstName).lastName(testLastName).buildNonSubscriberCustomer();
+        Customer ourMockCustomer = customer().id(TestConstants.CUSTOMER_ID_1).firstName(testFirstName).lastName(testLastName).buildCustomer();
         when(customerService.findById(TestConstants.CUSTOMER_ID_1)).thenReturn(ourMockCustomer);
         List<Customer> ourMockCustomersList = new LinkedList<>();
         ourMockCustomersList.add(ourMockCustomer);
@@ -70,7 +70,7 @@ public class CustomerControllerTests {
 
     @Test
     public void storeCustomer() throws Exception {
-        Customer customer = customer().id(TestConstants.CUSTOMER_ID_1).firstName("Test").lastName("User").buildNonSubscriberCustomer();
+        Customer customer = customer().id(TestConstants.CUSTOMER_ID_1).firstName("Test").lastName("User").buildCustomer();
 
         when(customerService.save(customer)).thenReturn(1);
 
@@ -84,7 +84,7 @@ public class CustomerControllerTests {
 
     @Test
     public void storeCustomerExceptionThrownWhilePersisting() throws Exception {
-        Customer customer = customer().id(TestConstants.CUSTOMER_ID_1).firstName("Test").lastName("User").buildNonSubscriberCustomer();
+        Customer customer = customer().id(TestConstants.CUSTOMER_ID_1).firstName("Test").lastName("User").buildCustomer();
 
         when(customerService.save(customer)).thenThrow(new OurException(OurException.Fault.GENERIC_SERVER_SIDE_ERROR));
 

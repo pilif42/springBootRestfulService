@@ -1,7 +1,6 @@
 package com.example.springboot.utility;
 
 import com.example.springboot.domain.Customer;
-import com.example.springboot.domain.NonSubscriberCustomer;
 
 public class CustomerBuilder {
 
@@ -26,12 +25,11 @@ public class CustomerBuilder {
         return this;
     }
 
-    public Customer buildNonSubscriberCustomer() {
-        NonSubscriberCustomer customer = new NonSubscriberCustomer();
+    public Customer buildCustomer() {
+        Customer customer = new Customer();
         customer.setId(this.id);
         customer.setFirstName(this.firstName);
         customer.setLastName(this.lastName);
-        customer.setVoucherCode("INIT2016");
         customer.setCreatedBy("theCreator");
         customer.setCreated(100L);
         customer.setModifiedBy("theCreator");
