@@ -80,6 +80,11 @@ public class ResponseAware {
         invokeGet(world.getEndpoint(url));
     }
 
+    public void invokeProductEndpointWithId(int id) throws IOException, AuthenticationException {
+        final String url = String.format("/product?id=%s", id);
+        invokeGet(world.getEndpoint(url));
+    }
+
     public void invokeGrabJsonAsIsEndpointWithId() throws IOException, AuthenticationException {
         final String url = String.format("/takejsonin");
         invokeGet(world.getEndpoint(url));
