@@ -13,7 +13,6 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.mockito.Matchers.isNull;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.handler;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -54,8 +53,8 @@ public class ProductControllerTests {
         actions.andExpect(jsonPath("$.id", is(TestConstants.NON_SUB_PRODUCT_ID_1)));
         actions.andExpect(jsonPath("$.name", is(TestConstants.NON_SUB_PRODUCT_NAME_1)));
         actions.andExpect(jsonPath("$.mapCode", is(TestConstants.NON_SUB_PRODUCT_MAP_CODE_1)));
-        // TODO jsonPath("$.startDate");
-        // TODO jsonPath("$.endDate");
+        actions.andExpect(jsonPath("$.startDate").doesNotExist());
+        actions.andExpect(jsonPath("$.endDate").doesNotExist());
     }
 
     @Test
@@ -72,6 +71,6 @@ public class ProductControllerTests {
         actions.andExpect(jsonPath("$.name", is(TestConstants.SUB_PRODUCT_NAME_1)));
         actions.andExpect(jsonPath("$.startDate", is(TestConstants.SUB_PRODUCT_START_DATE_1_INT)));
         actions.andExpect(jsonPath("$.endDate", is(TestConstants.SUB_PRODUCT_END_DATE_1_INT)));
-        // TODO jsonPath("$.mapCode");
+        actions.andExpect(jsonPath("$.mapCode").doesNotExist());
     }
 }
