@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.isA;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.handler;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -72,5 +73,19 @@ public class ProductControllerTests {
         actions.andExpect(jsonPath("$.startDate", is(TestConstants.SUB_PRODUCT_START_DATE_1_INT)));
         actions.andExpect(jsonPath("$.endDate", is(TestConstants.SUB_PRODUCT_END_DATE_1_INT)));
         actions.andExpect(jsonPath("$.mapCode").doesNotExist());
+    }
+
+    @Test
+    public void findProductNotFound() throws Exception {
+        when(productService.findById(TestConstants.SUB_PRODUCT_ID_1)).thenReturn(null);
+
+        ResultActions actions = mockMvc.perform(getJson("/product").param("id", TestConstants.SUB_PRODUCT_ID_1.toString()));
+
+        actions.andExpect(status().isNotFound());
+        actions.andExpect(handler().handlerType(ProductController.class));
+        actions.andExpect(handler().methodName("findProduct"));
+        actions.andExpect(jsonPath("$.error.code", is("UA-GP-102")));
+        actions.andExpect(jsonPath("$.error.timestamp", isA(Long.class)));
+        actions.andExpect(jsonPath("$.error.message", is("Product details not found")));
     }
 }
