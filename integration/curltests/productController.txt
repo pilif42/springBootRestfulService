@@ -14,3 +14,23 @@ curl http://localhost:8089/product?id=2 -v -X GET
 # Retrieve a non existing product
 curl http://localhost:8089/product?id=-1 -v -X GET
 404 {"error":{"code":"UA-GP-102","timestamp":1452696410427,"message":"Product details not found"}}
+
+
+## Create a NON subscription product
+curl -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:8089/product/create/nonsubscription -v -X POST -d "{\"version\":1,\"created\":1452438934179,\"modified\":1452438934179,\"name\":\"NON_SUB_2\",\"createdBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\",\"modifiedBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\",\"mapCode\":\"MAP_2\"}"
+201
+
+
+## Create a NON subscription product with missing mapCode
+curl -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:8089/product/create/nonsubscription -v -X POST -d "{\"version\":1,\"created\":1452438934179,\"modified\":1452438934179,\"name\":\"NON_SUB_2\",\"createdBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\",\"modifiedBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\"}"
+400 {"error":{"code":"OS-102","timestamp":1452721095985,"message":"Invalid Request"}}
+
+
+## Create a subscription product
+curl -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:8089/product/create/subscription -v -X POST -d "{\"version\":1,\"created\":1452438934179,\"modified\":1452438934179,\"name\":\"SUB_2\",\"createdBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\",\"modifiedBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\",\"startDate\":1452438934179,\"endDate\":1452438939999}"
+201
+
+
+## Create a subscription product with missing startDate
+curl -H "Accept: application/json" -H "Content-Type: application/json" http://localhost:8089/product/create/subscription -v -X POST -d "{\"version\":1,\"created\":1452438934179,\"modified\":1452438934179,\"name\":\"SUB_2\",\"createdBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\",\"modifiedBy\":\"7c13f7e0-0c6d-7c4b-6327-ffde84545db0\",\"endDate\":1452438939999}"
+400 {"error":{"code":"OS-102","timestamp":1452721095985,"message":"Invalid Request"}}

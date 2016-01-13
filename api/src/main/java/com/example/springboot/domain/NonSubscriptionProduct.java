@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @DiscriminatorValue(value = "NONSUBSCRIPTION")
@@ -14,6 +15,7 @@ import javax.persistence.Entity;
 public class NonSubscriptionProduct extends Product {
 
     @Column(name = "MAP_CODE")
+    @NotNull
     private String mapCode;
 
 }
