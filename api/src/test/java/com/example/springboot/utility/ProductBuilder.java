@@ -15,7 +15,7 @@ public class ProductBuilder {
         return this;
     }
 
-    public Product buildNonSubscriptionProduct() {
+    public NonSubscriptionProduct buildNonSubscriptionProduct() {
         NonSubscriptionProduct product = new NonSubscriptionProduct();
         product.setId(this.id);
         product.setName(TestConstants.NON_SUB_PRODUCT_NAME_1);
@@ -28,7 +28,7 @@ public class ProductBuilder {
         return product;
     }
 
-    public Product buildSubscriptionProduct() {
+    public SubscriptionProduct buildSubscriptionProduct() {
         SubscriptionProduct product = new SubscriptionProduct();
         product.setId(this.id);
         product.setName(TestConstants.SUB_PRODUCT_NAME_1);

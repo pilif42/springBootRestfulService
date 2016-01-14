@@ -110,8 +110,6 @@ Note that the above was taken from 'http://www.davismol.net/2015/03/21/jackson-u
 
 
 - TODO:
-    - unit tests on storing products
-
     - cuc tests on storing products
 
     - Spring Security:

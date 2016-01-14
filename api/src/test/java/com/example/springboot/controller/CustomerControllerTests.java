@@ -18,6 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.isA;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.handler;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -95,6 +96,9 @@ public class CustomerControllerTests {
                 .accept(MediaType.APPLICATION_JSON));
 
         actions.andExpect(status().is5xxServerError());
+        actions.andExpect(jsonPath("$.error.code", is("OS-016")));
+        actions.andExpect(jsonPath("$.error.timestamp", isA(Long.class)));
+        actions.andExpect(jsonPath("$.error.message", is("Request could not be completed because there is a problem with the service")));
     }
 
 }
