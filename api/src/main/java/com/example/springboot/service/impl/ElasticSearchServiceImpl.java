@@ -8,6 +8,7 @@ import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.Client;
 import org.elasticsearch.client.transport.TransportClient;
+import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.common.transport.InetSocketTransportAddress;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,9 @@ public class ElasticSearchServiceImpl implements ElasticSearchService {
     private Client client;
     private ObjectMapper mapper;
 
+    @Value("${elasticsearch.cluster.name}")
+    private String elasticsearchClusterName;
+
     @Value("${elasticsearch.server.name}")
     private String elasticsearchServerName;
 
@@ -32,10 +36,13 @@ public class ElasticSearchServiceImpl implements ElasticSearchService {
 
     @PostConstruct
     public void init() throws UnknownHostException {
+        log.debug("elasticsearchClusterName = {}", elasticsearchClusterName);
         log.debug("elasticsearchServerName = {}", elasticsearchServerName);
         log.debug("elasticsearchServerPort = {}", elasticsearchServerPort);
 
-        client = TransportClient.builder().build()
+        Settings settings = Settings.settingsBuilder().put("cluster.name", elasticsearchClusterName).build();
+
+        client = TransportClient.builder().settings(settings).build()
             .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(elasticsearchServerName), elasticsearchServerPort));
 
         mapper = new ObjectMapper();
