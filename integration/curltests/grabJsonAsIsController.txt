@@ -22,9 +22,9 @@ curl -H "Accept: application/json" -H "X-An-Id:9c160368-9326-50c7-d894-c2f3b37d0
               						"build_snapshot" : false,
               						"lucene_version" : "5.3.1"
               					  }, "tagline" : "You Know, for Search"}
-    - to store some json:
+    - to store some json (with index = beb3e8bb-5ca9-46d0-928f-f792fdd50147 and type = userpreferences):
       		- curl -X PUT 'http://127.0.0.1:9200/beb3e8bb-5ca9-46d0-928f-f792fdd50147/userpreferences/9c160368-9326-50c7-d894-c2f3b37d03a6' -d '{ "name" : "Dilbert Brown" }'
       		- {"_index":"beb3e8bb-5ca9-46d0-928f-f792fdd50147","_type":"userpreferences","_id":"9c160368-9326-50c7-d894-c2f3b37d03a6","_version":4,"_shards":{"total":2,"successful":1,"failed":0},"created":false}
-    - to retrieve json:
+    - to retrieve the json:
       		- curl -X GET 'http://127.0.0.1:9200/beb3e8bb-5ca9-46d0-928f-f792fdd50147/userpreferences/9c160368-9326-50c7-d894-c2f3b37d03a6?pretty=false'
       		- 200{"_index":"beb3e8bb-5ca9-46d0-928f-f792fdd50147","_type":"userpreferences","_id":"9c160368-9326-50c7-d894-c2f3b37d03a6","_version":4,"found":true,"_source":{ "name" : "Dilbert Brown" }}
