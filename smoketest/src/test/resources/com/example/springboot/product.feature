@@ -30,3 +30,9 @@ Feature: Validating product requests
     And the response should contain the field "modifiedBy" with value "7c13f7e0-0c6d-7c4b-6327-ffde84545db0"
     And the response should contain the field "startDate" with a long value
     And the response should contain the field "endDate" with a long value
+
+  Scenario: Store a new NON subscription product
+    Given the JSON parameter "firstName" with value "Lionel"
+    And the JSON parameter "lastName" with value "Messi"
+    When I make the REST call to the POST customer endpoint
+    Then the response status should be 201

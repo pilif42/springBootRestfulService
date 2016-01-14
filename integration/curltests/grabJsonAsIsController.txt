@@ -6,3 +6,25 @@ curl -H "Accept: application/json" -H "Content-Type: application/json" -H "X-An-
 ## Retrieve a document from Elasticsearch
 curl -H "Accept: application/json" -H "X-An-Id:9c160368-9326-50c7-d894-c2f3b37d03a6" http://localhost:8089/takejsonin -v -X GET
 200 {"version":4,"source":{"initial_mapview":"gb","anotherprop":"thevalue","show_distance_in":"metric"}}
+
+
+## Notes to hit your local Elasticsearch directly
+    - to start ElasticSearch:
+      		- Command Prompt to C:\elasticsearch-2.1.1\bin
+      		- elasticsearch.bat
+    - to verify that it is running:
+            - curl -X GET http://localhost:9200/
+            - {"name" : "Crimson Commando", "cluster_name" : "elasticsearch",
+              					  "version" : {
+              						"number" : "2.1.1",
+              						"build_hash" : "40e2c53a6b6c2972b3d13846e450e66f4375bd71",
+              						"build_timestamp" : "2015-12-15T13:05:55Z",
+              						"build_snapshot" : false,
+              						"lucene_version" : "5.3.1"
+              					  }, "tagline" : "You Know, for Search"}
+    - to store some json:
+      		- curl -X PUT 'http://127.0.0.1:9200/beb3e8bb-5ca9-46d0-928f-f792fdd50147/userpreferences/9c160368-9326-50c7-d894-c2f3b37d03a6' -d '{ "name" : "Dilbert Brown" }'
+      		- {"_index":"beb3e8bb-5ca9-46d0-928f-f792fdd50147","_type":"userpreferences","_id":"9c160368-9326-50c7-d894-c2f3b37d03a6","_version":4,"_shards":{"total":2,"successful":1,"failed":0},"created":false}
+    - to retrieve json:
+      		- curl -X GET 'http://127.0.0.1:9200/beb3e8bb-5ca9-46d0-928f-f792fdd50147/userpreferences/9c160368-9326-50c7-d894-c2f3b37d03a6?pretty=false'
+      		- 200{"_index":"beb3e8bb-5ca9-46d0-928f-f792fdd50147","_type":"userpreferences","_id":"9c160368-9326-50c7-d894-c2f3b37d03a6","_version":4,"found":true,"_source":{ "name" : "Dilbert Brown" }}
