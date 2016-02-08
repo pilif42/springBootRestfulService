@@ -1,9 +1,10 @@
 ## To build:
         - gradlew clean build
+        - gradlew clean build check (if you want to run CheckStyle)
         - Note that the 1st time around after the refactoring and the addition of directories (smokeytests, etc.), I had to do first:
                 - gradle wrapper
                 - on Mo's laptop, it is then ./gradlew clean build
-        - Note that for the smoketests to run successfully, you will need Elasticsearch installed locally.
+        - Note that for the smoketests to run successfully, you will need Postgres and Elasticsearch installed locally.
 
 
 ## To run:
@@ -110,6 +111,10 @@ Note that the above was taken from 'http://www.davismol.net/2015/03/21/jackson-u
 
 
 - TODO:
+    - verify that you can build with CheckStyle option:
+            - Postgres must be installed
+            - Elasticsearch alsos
+
     - cuc tests on storing products
 
     - Spring Security:
