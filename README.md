@@ -112,8 +112,12 @@ Note that the above was taken from 'http://www.davismol.net/2015/03/21/jackson-u
 
 - TODO:
     - verify that you can build with CheckStyle option:
-            - Postgres must be installed
-            - Elasticsearch alsos
+            - Postgres must be installed:
+                    - verify my install of 9.5
+                    - migrate project to 9.5:
+                            - see 9.4 mentioned in api/database/postgres
+                            - gradle dependencies, etc.
+            - Elasticsearch install
 
     - cuc tests on storing products
 
