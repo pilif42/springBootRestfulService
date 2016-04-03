@@ -8,13 +8,13 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 project.ext.versions = [
-        spring: '4.1.5.RELEASE',
-        jsonpath: '1.2.0',
-        cukes: '1.2.2',
-        junit: '4.12',
+        spring    : '4.1.5.RELEASE',
+        jsonpath  : '1.2.0',
+        cukes     : '1.2.2',
+        junit     : '4.12',
         httpclient: '4.4',
-        fluentHc: '4.4',
-        cio: '2.4'
+        fluentHc  : '4.4',
+        cio       : '2.4'
 ]
 
 if (new File("$rootProject.projectDir/profile.gradle").exists()) {

@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class SubscriptionProductServiceImpl implements SubscriptionProductService {
 
-    @Autowired
-    private SubscriptionProductRepository subscriptionProductRepository;
+  @Autowired
+  private SubscriptionProductRepository subscriptionProductRepository;
 
-    @Override
-    public int save(SubscriptionProduct aSubscription) {
-        //return subscriptionProductRepository.save(aSubscription);
-        return 0;
-    }
+  @Override
+  public int save(SubscriptionProduct aSubscription) {
+    //return subscriptionProductRepository.save(aSubscription);
+    return 0;
+  }
 }

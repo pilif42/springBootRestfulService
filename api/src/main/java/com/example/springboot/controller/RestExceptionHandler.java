@@ -17,34 +17,34 @@ import java.util.Locale;
 @Slf4j
 public class RestExceptionHandler {
 
-    @ExceptionHandler(OurException.class)
-    public ResponseEntity<?> handleError(OurException ourException) {
-        return new ResponseEntity<>(
+  @ExceptionHandler(OurException.class)
+  public ResponseEntity<?> handleError(OurException ourException) {
+    return new ResponseEntity<>(
             ourException,
             ourException.getFault().getHttpStatus()
-        );
+    );
+  }
+
+  @ResponseBody
+  @ExceptionHandler(InvalidRequestException.class)
+  public ResponseEntity<?> handleMessageNotReadable(InvalidRequestException ex, Locale locale) {
+    StringBuilder logMsg = new StringBuilder(ex.getSourceMessage());
+
+    StringBuilder responseMsg = new StringBuilder();
+    List<FieldError> fieldErrors = ex.getErrors().getFieldErrors();
+    for (Iterator<FieldError> errorsIte = fieldErrors.listIterator(); errorsIte.hasNext(); ) {
+      FieldError fieldError = errorsIte.next();
+      responseMsg.append(fieldError.getDefaultMessage());
+      if (errorsIte.hasNext()) {
+        responseMsg.append(",");
+      }
     }
 
-    @ResponseBody
-    @ExceptionHandler(InvalidRequestException.class)
-    public ResponseEntity<?> handleMessageNotReadable(InvalidRequestException ex, Locale locale) {
-        StringBuilder logMsg = new StringBuilder(ex.getSourceMessage());
-
-        StringBuilder responseMsg = new StringBuilder();
-        List<FieldError> fieldErrors = ex.getErrors().getFieldErrors();
-        for (Iterator<FieldError> errorsIte = fieldErrors.listIterator(); errorsIte.hasNext(); ) {
-            FieldError fieldError = errorsIte.next();
-            responseMsg.append(fieldError.getDefaultMessage());
-            if (errorsIte.hasNext()) {
-                responseMsg.append(",");
-            }
-        }
-
-        log.error("logMsg is '{}' - responseMsg is '{}'", logMsg.toString(), responseMsg.toString());
-        OurException ourException = new OurException(OurException.Fault.BAD_REQUEST);
-        return new ResponseEntity<>(
+    log.error("logMsg is '{}' - responseMsg is '{}'", logMsg.toString(), responseMsg.toString());
+    OurException ourException = new OurException(OurException.Fault.BAD_REQUEST);
+    return new ResponseEntity<>(
             ourException,
             ourException.getFault().getHttpStatus()
-        );
-    }
+    );
+  }
 }

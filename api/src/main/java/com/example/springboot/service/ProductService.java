@@ -5,8 +5,9 @@ import com.example.springboot.domain.Product;
 import com.example.springboot.domain.SubscriptionProduct;
 
 public interface ProductService {
-    Product findById(int prodId);
+  Product findById(int prodId);
 
-    int saveSubscriptionProduct(SubscriptionProduct aSubscriptionProduct);
-    int saveNonSubscriptionProduct(NonSubscriptionProduct aNonSubscriptionProduct);
+  int saveSubscriptionProduct(SubscriptionProduct aSubscriptionProduct);
+
+  int saveNonSubscriptionProduct(NonSubscriptionProduct aNonSubscriptionProduct);
 }

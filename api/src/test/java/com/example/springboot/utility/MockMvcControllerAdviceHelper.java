@@ -11,30 +11,30 @@ import java.lang.reflect.Method;
 
 public class MockMvcControllerAdviceHelper extends ExceptionHandlerExceptionResolver {
 
-    private final Class exceptionHandlerClass;
+  private final Class exceptionHandlerClass;
 
-    public MockMvcControllerAdviceHelper(Class exceptionHandlerClass) {
-        super();
-        getMessageConverters().add(new MappingJackson2HttpMessageConverter());
-        getMessageConverters().add(new Jaxb2RootElementHttpMessageConverter());
-        this.exceptionHandlerClass = exceptionHandlerClass;
-        afterPropertiesSet();
-    }
+  public MockMvcControllerAdviceHelper(Class exceptionHandlerClass) {
+    super();
+    getMessageConverters().add(new MappingJackson2HttpMessageConverter());
+    getMessageConverters().add(new Jaxb2RootElementHttpMessageConverter());
+    this.exceptionHandlerClass = exceptionHandlerClass;
+    afterPropertiesSet();
+  }
 
-    public static MockMvcControllerAdviceHelper mockAdviceFor(Class exceptionHandlerClass) {
-        return new MockMvcControllerAdviceHelper(exceptionHandlerClass);
-    }
+  public static MockMvcControllerAdviceHelper mockAdviceFor(Class exceptionHandlerClass) {
+    return new MockMvcControllerAdviceHelper(exceptionHandlerClass);
+  }
 
-    protected ServletInvocableHandlerMethod getExceptionHandlerMethod(HandlerMethod handlerMethod, Exception exception) {
-        Object exceptionHandler = null;
-        try {
-            exceptionHandler = exceptionHandlerClass.newInstance();
-        } catch (InstantiationException e) {
-            throw new RuntimeException(String.format("Unable to instantiate exception handler %s", exceptionHandlerClass.getCanonicalName()), e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(String.format("Unable to instantiate exception handler %s", exceptionHandlerClass.getCanonicalName()), e);
-        }
-        Method method = new ExceptionHandlerMethodResolver(exceptionHandlerClass).resolveMethod(exception);
-        return new ServletInvocableHandlerMethod(exceptionHandler, method);
+  protected ServletInvocableHandlerMethod getExceptionHandlerMethod(HandlerMethod handlerMethod, Exception exception) {
+    Object exceptionHandler = null;
+    try {
+      exceptionHandler = exceptionHandlerClass.newInstance();
+    } catch (InstantiationException e) {
+      throw new RuntimeException(String.format("Unable to instantiate exception handler %s", exceptionHandlerClass.getCanonicalName()), e);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException(String.format("Unable to instantiate exception handler %s", exceptionHandlerClass.getCanonicalName()), e);
     }
+    Method method = new ExceptionHandlerMethodResolver(exceptionHandlerClass).resolveMethod(exception);
+    return new ServletInvocableHandlerMethod(exceptionHandler, method);
+  }
 }

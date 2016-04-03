@@ -23,31 +23,31 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @Slf4j
 public class GrabJsonAsIsController {
 
-    @Autowired
-    private ElasticSearchService elasticSearchService;
+  @Autowired
+  private ElasticSearchService elasticSearchService;
 
-    @ResponseBody
-    @RequestMapping(value = "/takejsonin", method = POST, consumes = "application/json")
-    public ResponseEntity<?> takeJsonIn(@RequestHeader(value = "X-An-Id", required = false) String userId, HttpServletRequest request) {
-        log.debug("takeJsonIn with userId = {}", userId);
+  @ResponseBody
+  @RequestMapping(value = "/takejsonin", method = POST, consumes = "application/json")
+  public ResponseEntity<?> takeJsonIn(@RequestHeader(value = "X-An-Id", required = false) String userId, HttpServletRequest request) {
+    log.debug("takeJsonIn with userId = {}", userId);
 
-        try {
-            String jsonBody = IOUtils.toString(request.getInputStream());
-            log.debug("jsonBody received is {}", jsonBody);
+    try {
+      String jsonBody = IOUtils.toString(request.getInputStream());
+      log.debug("jsonBody received is {}", jsonBody);
 
-            elasticSearchService.storeSomeJsonDocument(userId, jsonBody);
+      elasticSearchService.storeSomeJsonDocument(userId, jsonBody);
 
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (IOException e) {
-            log.error("Failed to parse incoming request: " + e.getMessage(), e);
-            throw new OurException(OurException.Fault.ERROR_PARSING_RECEIPT_REQUEST);
-        }
+      return new ResponseEntity<>(HttpStatus.OK);
+    } catch (IOException e) {
+      log.error("Failed to parse incoming request: " + e.getMessage(), e);
+      throw new OurException(OurException.Fault.ERROR_PARSING_RECEIPT_REQUEST);
     }
+  }
 
-    @ResponseBody
-    @RequestMapping(value = "/takejsonin", method = GET, produces = "application/json")
-    public UserPreferencesResponse getUserPreferences(@RequestHeader(value = "X-An-Id", required = false) String userId) {
-        log.debug("Retrieving user preferences with userId = {}", userId);
-        return elasticSearchService.getPreferences(userId);
-    }
+  @ResponseBody
+  @RequestMapping(value = "/takejsonin", method = GET, produces = "application/json")
+  public UserPreferencesResponse getUserPreferences(@RequestHeader(value = "X-An-Id", required = false) String userId) {
+    log.debug("Retrieving user preferences with userId = {}", userId);
+    return elasticSearchService.getPreferences(userId);
+  }
 }

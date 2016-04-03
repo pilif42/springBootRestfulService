@@ -13,30 +13,30 @@ import org.springframework.stereotype.Service;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+  @Autowired
+  private ProductRepository productRepository;
 
-    @Autowired
-    private SubscriptionProductRepository subscriptionProductRepository;
+  @Autowired
+  private SubscriptionProductRepository subscriptionProductRepository;
 
-    @Autowired
-    private NonSubscriptionProductRepository nonSubscriptionProductRepository;
+  @Autowired
+  private NonSubscriptionProductRepository nonSubscriptionProductRepository;
 
-    @Override
-    public Product findById(int prodId) {
-        return productRepository.findById(prodId);
-    }
+  @Override
+  public Product findById(int prodId) {
+    return productRepository.findById(prodId);
+  }
 
-    @Override
-    public int saveSubscriptionProduct(SubscriptionProduct aSubscriptionProduct) {
-        SubscriptionProduct subscriptionProduct = subscriptionProductRepository.save(aSubscriptionProduct);
-        return subscriptionProduct.getId();
-    }
+  @Override
+  public int saveSubscriptionProduct(SubscriptionProduct aSubscriptionProduct) {
+    SubscriptionProduct subscriptionProduct = subscriptionProductRepository.save(aSubscriptionProduct);
+    return subscriptionProduct.getId();
+  }
 
-    @Override
-    public int saveNonSubscriptionProduct(NonSubscriptionProduct aNonSubscriptionProduct) {
-        NonSubscriptionProduct nonSubscriptionProduct = nonSubscriptionProductRepository.save(aNonSubscriptionProduct);
-        return nonSubscriptionProduct.getId();
-    }
+  @Override
+  public int saveNonSubscriptionProduct(NonSubscriptionProduct aNonSubscriptionProduct) {
+    NonSubscriptionProduct nonSubscriptionProduct = nonSubscriptionProductRepository.save(aNonSubscriptionProduct);
+    return nonSubscriptionProduct.getId();
+  }
 
 }

@@ -24,9 +24,10 @@ plugins {
 
 apply from: 'config.gradle'
 
+
+import org.apache.tools.ant.filters.ReplaceTokens
 import org.eclipse.jgit.lib.Repository
 import org.eclipse.jgit.storage.file.FileRepositoryBuilder
-import org.apache.tools.ant.filters.ReplaceTokens
 
 // -----------------------------------------------------------------
 // Util methods
@@ -66,7 +67,7 @@ if (!project.hasProperty('profile')) {
     ext.profile = 'local'
 }
 
-archivesBaseName='springbootexample'
+archivesBaseName = 'springbootexample'
 group = project.ext.group
 version = project.ext.version
 sourceCompatibility = project.ext.sourceCompatibility
@@ -120,10 +121,10 @@ processResources {
     }
 
     filter ReplaceTokens, tokens: [
-            "sha": scm.revision,
-            "date": java.time.ZonedDateTime.now().format(java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME),
-            "group": project.group,
-            "name": project.name,
+            "sha"    : scm.revision,
+            "date"   : java.time.ZonedDateTime.now().format(java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME),
+            "group"  : project.group,
+            "name"   : project.name,
             "version": project.version
     ]
 }

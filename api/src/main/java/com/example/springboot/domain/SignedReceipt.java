@@ -24,44 +24,44 @@ import java.io.IOException;
 @JsonDeserialize(using = SignedReceipt.SignedReceiptDeserializer.class)
 public class SignedReceipt {
 
-    @JsonProperty("data_signature")
-    private String signature;
+  @JsonProperty("data_signature")
+  private String signature;
 
-    private PurchaseData purchaseData;
+  private PurchaseData purchaseData;
 
-    @JsonIgnore
-    private String rawReceipt;  // required for the validation
+  @JsonIgnore
+  private String rawReceipt;  // required for the validation
 
-    public static class SignedReceiptDeserializer extends JsonDeserializer<SignedReceipt> {
+  public static class SignedReceiptDeserializer extends JsonDeserializer<SignedReceipt> {
 
-        @Override
-        public SignedReceipt deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-            SignedReceipt signedReceipt = new SignedReceipt();
+    @Override
+    public SignedReceipt deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
+      SignedReceipt signedReceipt = new SignedReceipt();
 
-            JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
 
-            if (!node.has("data_signature")) {
-                throw new OurException(OurException.Fault.DATA_SIGNATURE_NOT_FOUND);
-            }
-            signedReceipt.signature = node.get("data_signature").asText();
+      if (!node.has("data_signature")) {
+        throw new OurException(OurException.Fault.DATA_SIGNATURE_NOT_FOUND);
+      }
+      signedReceipt.signature = node.get("data_signature").asText();
 
-            String nodeName = "purchase_data";
-            if (node.has("receipt")) {
-                nodeName = "receipt";
-            }
-            if (!node.has(nodeName)) {
-                throw new OurException(OurException.Fault.PURCHASE_DATA_NOT_FOUND);
-            }
-            signedReceipt.rawReceipt = node.get(nodeName).toString();
+      String nodeName = "purchase_data";
+      if (node.has("receipt")) {
+        nodeName = "receipt";
+      }
+      if (!node.has(nodeName)) {
+        throw new OurException(OurException.Fault.PURCHASE_DATA_NOT_FOUND);
+      }
+      signedReceipt.rawReceipt = node.get(nodeName).toString();
 
-            try {
-                signedReceipt.purchaseData = jsonParser.getCodec().treeToValue(node.get(nodeName), PurchaseData.class);
-            } catch (JsonProcessingException e) {
-                log.error("JsonProcessingException with message = = {}", e.getMessage());
-                throw new OurException(OurException.Fault.ERROR_PARSING_PURCHASE_DATA);
-            }
+      try {
+        signedReceipt.purchaseData = jsonParser.getCodec().treeToValue(node.get(nodeName), PurchaseData.class);
+      } catch (JsonProcessingException e) {
+        log.error("JsonProcessingException with message = = {}", e.getMessage());
+        throw new OurException(OurException.Fault.ERROR_PARSING_PURCHASE_DATA);
+      }
 
-            return signedReceipt;
-        }
+      return signedReceipt;
     }
+  }
 }

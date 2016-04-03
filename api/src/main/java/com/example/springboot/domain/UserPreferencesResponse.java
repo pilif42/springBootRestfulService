@@ -6,6 +6,6 @@ import java.util.Map;
 
 @Data
 public class UserPreferencesResponse {
-    private long version;
-    private Map<String, Object> source;
+  private long version;
+  private Map<String, Object> source;
 }

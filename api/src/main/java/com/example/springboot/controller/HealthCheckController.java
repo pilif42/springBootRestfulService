@@ -21,38 +21,38 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @Slf4j
 public class HealthCheckController {
 
-    @Autowired
-    private HealthDAO healthDAO;
+  @Autowired
+  private HealthDAO healthDAO;
 
-    private BuildInfo buildInfo;
+  private BuildInfo buildInfo;
 
-    @Autowired
-    public HealthCheckController(BuildInfo buildInfo) {
-        this.buildInfo = buildInfo;
+  @Autowired
+  public HealthCheckController(BuildInfo buildInfo) {
+    this.buildInfo = buildInfo;
+  }
+
+  @RequestMapping(value = "/healthcheck", method = GET, produces = APPLICATION_JSON_VALUE)
+  public ResponseEntity<?> handleHealthcheck(@RequestHeader("host") String host) {
+    try {
+      log.debug("Entering handleHealthcheck...");
+      healthDAO.checkDB();
+      return new ResponseEntity<>(new HealthcheckResponse(host, "OK"), HttpStatus.OK);
+    } catch (Exception e) {
+      return new ResponseEntity<>(new HealthcheckResponse(host, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
     }
+  }
 
-    @RequestMapping(value = "/healthcheck", method = GET, produces = APPLICATION_JSON_VALUE)
-    public ResponseEntity<?> handleHealthcheck(@RequestHeader("host") String host) {
-        try {
-            log.debug("Entering handleHealthcheck...");
-            healthDAO.checkDB();
-            return new ResponseEntity<>(new HealthcheckResponse(host, "OK"), HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>(new HealthcheckResponse(host, e.getMessage()), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+  public class HealthcheckResponse {
+    public final long timestamp;
+    public final String host;
+    public final String message;
+    public final String sha;
+
+    public HealthcheckResponse(String host, String message) {
+      this.host = host;
+      this.message = message;
+      this.timestamp = System.currentTimeMillis();
+      this.sha = buildInfo.getSha();
     }
-
-    public class HealthcheckResponse {
-        public final long timestamp;
-        public final String host;
-        public final String message;
-        public final String sha;
-
-        public HealthcheckResponse(String host, String message) {
-            this.host = host;
-            this.message = message;
-            this.timestamp = System.currentTimeMillis();
-            this.sha = buildInfo.getSha();
-        }
-    }
+  }
 }

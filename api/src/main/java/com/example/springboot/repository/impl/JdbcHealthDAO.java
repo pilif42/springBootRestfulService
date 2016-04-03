@@ -8,11 +8,11 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class JdbcHealthDAO implements HealthDAO {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+  @Autowired
+  private JdbcTemplate jdbcTemplate;
 
-    @Override
-    public void checkDB() {
-        jdbcTemplate.queryForObject("select count(*) from testschema.CUSTOMER", Long.class);
-    }
+  @Override
+  public void checkDB() {
+    jdbcTemplate.queryForObject("select count(*) from testschema.CUSTOMER", Long.class);
+  }
 }

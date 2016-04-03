@@ -11,9 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 // Only use the below if you want to rely on application.properties under resources
 //@PropertySource("classpath:application.properties")
 public class Application {
-
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-
+  public static void main(String[] args) {
+    SpringApplication.run(Application.class, args);
+  }
 }

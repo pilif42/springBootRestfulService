@@ -7,6 +7,6 @@ import org.springframework.data.repository.NoRepositoryBean;
 @NoRepositoryBean
 public interface ProductBaseRepository<T extends Product> extends CrudRepository<T, Long> {
 
-    public T findById(Integer id);
+  public T findById(Integer id);
 
 }

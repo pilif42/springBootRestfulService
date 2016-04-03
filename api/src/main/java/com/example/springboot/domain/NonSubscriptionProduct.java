@@ -14,8 +14,8 @@ import javax.validation.constraints.NotNull;
 @EqualsAndHashCode(callSuper = true)
 public class NonSubscriptionProduct extends Product {
 
-    @Column(name = "MAP_CODE")
-    @NotNull
-    private String mapCode;
+  @Column(name = "MAP_CODE")
+  @NotNull
+  private String mapCode;
 
 }

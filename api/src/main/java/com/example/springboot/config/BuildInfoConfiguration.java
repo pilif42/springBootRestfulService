@@ -13,17 +13,17 @@ import org.springframework.core.env.Environment;
 @PropertySource("classpath:build.properties")
 public class BuildInfoConfiguration {
 
-    @Autowired
-    private Environment env;
+  @Autowired
+  private Environment env;
 
-    @Bean
-    public BuildInfo buildInfo() {
-        return new BuildInfo(
+  @Bean
+  public BuildInfo buildInfo() {
+    return new BuildInfo(
             env.getProperty("build.info.sha", StringConstants.UNKNOWN),
             env.getProperty("build.info.date", StringConstants.UNKNOWN),
             env.getProperty("build.info.group", StringConstants.UNKNOWN),
             env.getProperty("build.info.name", StringConstants.UNKNOWN),
             env.getProperty("build.info.version", StringConstants.UNKNOWN)
-        );
-    }
+    );
+  }
 }

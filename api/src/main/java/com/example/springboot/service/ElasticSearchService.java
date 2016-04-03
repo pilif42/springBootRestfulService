@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface ElasticSearchService {
-    void storeSomeJsonDocument(String userId, String jsonDocument);
-    UserPreferencesResponse getPreferences(String userId);
+  void storeSomeJsonDocument(String userId, String jsonDocument);
+
+  UserPreferencesResponse getPreferences(String userId);
 }

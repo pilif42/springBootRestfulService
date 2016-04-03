@@ -8,14 +8,14 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 public class MvcHelper {
 
-    public static MockHttpServletRequestBuilder getJson(String url) {
-        return get(url).accept(MediaType.APPLICATION_JSON);
-    }
+  public static MockHttpServletRequestBuilder getJson(String url) {
+    return get(url).accept(MediaType.APPLICATION_JSON);
+  }
 
-    public static MockHttpServletRequestBuilder postJson(String url, String content) {
-        return post(url).content(content)
+  public static MockHttpServletRequestBuilder postJson(String url, String content) {
+    return post(url).content(content)
             .contentType(MediaType.APPLICATION_JSON)
             .accept(MediaType.APPLICATION_JSON);
-    }
+  }
 
 }

@@ -13,11 +13,11 @@ import javax.validation.constraints.NotNull;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class SubscriptionProduct extends Product {
-    @Column(name = "START_DATE")
-    @NotNull
-    private Long startDate;
+  @Column(name = "START_DATE")
+  @NotNull
+  private Long startDate;
 
-    @Column(name = "END_DATE")
-    @NotNull
-    private Long endDate;
+  @Column(name = "END_DATE")
+  @NotNull
+  private Long endDate;
 }
