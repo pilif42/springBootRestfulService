@@ -1,9 +1,8 @@
 ## To build:
-        - gradlew clean build
-        - gradlew clean build check (if you want to run CheckStyle)
-        - Note that the 1st time around after the refactoring and the addition of directories (smokeytests, etc.), I had to do first:
+        - prerequisite step (only the 1st time around or if you modify the gradle version to be used):
                 - gradle wrapper
-                - on Mo's laptop, it is then ./gradlew clean build
+        - gradlew clean build (on Mo's laptop, it is ./gradlew clean build)
+        - if you want to run CheckStyle: gradlew clean build check
         - Note that for the smoketests to run successfully, you will need Postgres and Elasticsearch installed locally.
                 - These are currently commented out. See settings.gradle.
 

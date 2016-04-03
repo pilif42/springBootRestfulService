@@ -69,7 +69,7 @@ dependencies {
 }
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.2.1'
+    gradleVersion = '2.12'
 }
 
 task cucumber(description: 'Runs the cucumber tests.', group: 'Cucumber') {
