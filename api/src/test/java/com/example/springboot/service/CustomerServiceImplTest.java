@@ -4,22 +4,29 @@ import com.example.springboot.domain.Customer;
 import com.example.springboot.repository.CustomerRepository;
 import com.example.springboot.service.impl.CustomerServiceImpl;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class CustomerServiceImplTestWithMockitoJUnitRunner {
+public class CustomerServiceImplTest {
   @Mock
   CustomerRepository customerRepository;
 
   @InjectMocks
   CustomerServiceImpl customerService;
+
+  @Before
+  public void initMocks(){
+    MockitoAnnotations.initMocks(this);
+  }
 
   @Test
   public void testFindById() {
