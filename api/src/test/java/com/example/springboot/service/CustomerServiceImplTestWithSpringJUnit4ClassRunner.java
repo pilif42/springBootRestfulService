@@ -16,7 +16,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=TestConfig.class, loader=AnnotationConfigContextLoader.class)
-public class CustomerServiceImplTest {
+public class CustomerServiceImplTestWithSpringJUnit4ClassRunner {
 
   @Autowired
   private CustomerService customerService;
