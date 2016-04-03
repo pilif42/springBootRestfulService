@@ -5,6 +5,7 @@
                 - gradle wrapper
                 - on Mo's laptop, it is then ./gradlew clean build
         - Note that for the smoketests to run successfully, you will need Postgres and Elasticsearch installed locally.
+                - These are currently commented out. See settings.gradle.
 
 
 ## To run:
