@@ -15,6 +15,19 @@ import org.mockito.runners.MockitoJUnitRunner;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+/**
+ * Example of a unit test where we mock objects.
+ *
+ * Note that the class name ends up in Test. This is important for the class to be picked up automatically by Maven or
+ * Gradle as a unit test to be run.
+ *
+ * In Maven, you should add the following to your pom:
+ * <plugin>
+ *   <groupId>org.apache.maven.plugins</groupId>
+ *   <artifactId>maven-surefire-plugin</artifactId>
+ *   <version>${maventest.version}</version>
+ *   </plugin>
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class CustomerServiceImplTest {
   @Mock

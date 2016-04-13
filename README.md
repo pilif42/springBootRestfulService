@@ -111,6 +111,7 @@ Note that the above was taken from 'http://www.davismol.net/2015/03/21/jackson-u
 
 
 - TODO:
+    - ElasticSearchServiceImplITCase to sort out
     - verify that you can build with CheckStyle option:
             - Postgres must be installed:
                     - verify my install of 9.5
