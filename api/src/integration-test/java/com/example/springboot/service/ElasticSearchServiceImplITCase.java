@@ -51,7 +51,7 @@ public class ElasticSearchServiceImplITCase {
    */
   @Test
   public void skeletonTest() {
-    assertNotNull(elasticSearchService);
-    assertTrue(true);
+    TestCase.assertNotNull(elasticSearchService);
+    TestCase.assertTrue(true);
   }
 }

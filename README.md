@@ -3,6 +3,12 @@
                 - gradle wrapper
         - gradlew clean build (on Mo's laptop, it is ./gradlew clean build)
         - if you want to run CheckStyle: gradlew clean build check
+        - to run only unit tests:
+                - ./gradlew clean test
+        - to run only integration tests under src\integration-test:
+                - ./gradlew clean integrationTest
+        - to run both unit tests and integration tests:
+                - ./gradlew clean test integrationTest
         - Note that for the smoketests to run successfully, you will need Postgres and Elasticsearch installed locally.
                 - These are currently commented out. See settings.gradle.
 
@@ -111,7 +117,7 @@ Note that the above was taken from 'http://www.davismol.net/2015/03/21/jackson-u
 
 
 - TODO:
-    - ElasticSearchServiceImplITCase to sort out
+    - Why ElasticSearchServiceImplITCase does not compile: see http://www.petrikainulainen.net/programming/gradle/getting-started-with-gradle-integration-testing/
     - verify that you can build with CheckStyle option:
             - Postgres must be installed:
                     - verify my install of 9.5

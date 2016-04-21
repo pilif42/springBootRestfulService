@@ -87,6 +87,22 @@ repositories {
     maven { url "http://repo.spring.io/milestone" }
 }
 
+sourceSets {
+    integrationTest {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/integration-test/java')
+        }
+        resources.srcDir file('src/integration-test/resources')
+    }
+}
+
+configurations {
+    integrationTestCompile.extendsFrom testCompile
+    integrationTestRuntime.extendsFrom testRuntime
+}
+
 dependencies {
     compile "org.springframework.cloud:spring-cloud-config-client:1.0.3.RELEASE"
     compile("org.springframework.boot:spring-boot-starter-web")
@@ -153,4 +169,16 @@ checkstyle {
 
 task wrapper(type: Wrapper) {
     gradleVersion = '2.12'
+}
+
+task integrationTest(type: Test) {
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath = sourceSets.integrationTest.runtimeClasspath
+}
+
+check.dependsOn integrationTest
+integrationTest.mustRunAfter test
+
+tasks.withType(Test) {
+    reports.html.destination = file("${reporting.baseDir}/${name}")
 }
